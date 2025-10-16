@@ -155,6 +155,34 @@ body {
   margin-top: 40px;
 }
 
+.parents-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.parent-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.parent-section p {
+  margin: 5px 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.invitation-text {
+  font-size: 1.1rem;
+  margin: 30px 0;
+  font-style: italic;
+}
+
 .detail-row {
   display: flex;
   justify-content: space-between;
@@ -198,7 +226,7 @@ body {
   display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #4a6038;
+  background-color: #38511F;
   color: white;
   text-decoration: none;
   border-radius: 25px;
@@ -209,13 +237,13 @@ body {
 }
 
 .map-link:hover {
-  background-color: #5a7048;
+  background-color: #2d3f18;
 }
 
 /* Save the Date Section */
 .save-date-section {
   padding: 60px 0;
-  background-color: #4e6437;
+  background-color: #38511F;
   color: white;
   text-align: center;
 }
@@ -231,7 +259,7 @@ body {
   font-family: 'Dancing Script', cursive;
   font-size: 3rem;
   margin-bottom: 30px;
-  color: #4e6437;
+  color: #38511F;
   background-color: white;
   display: inline-block;
   padding: 10px 20px;
@@ -273,6 +301,11 @@ body {
   text-align: center;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
 }
 
 .calendar-day:hover {
@@ -325,7 +358,7 @@ body {
   display: block;
   font-size: 2rem;
   font-weight: bold;
-  color: #4e6437;
+  color: #38511F;
   background-color: white;
   border-radius: 5px;
   padding: 10px;
@@ -345,7 +378,7 @@ body {
 }
 
 .timeline-section .section-title {
-  color: #4e6437;
+  color: #38511F;
   margin-bottom: 40px;
 }
 
@@ -362,7 +395,7 @@ body {
 }
 
 .timeline-time {
-  background-color: #4e6437;
+  background-color: #38511F;
   color: white;
   padding: 8px 12px;
   border-radius: 20px;
@@ -375,13 +408,13 @@ body {
 .timeline-line {
   width: 30px;
   height: 2px;
-  background-color: #4e6437;
+  background-color: #38511F;
   margin: 0 15px;
 }
 
 .timeline-event {
   flex: 1;
-  color: #4e6437;
+  color: #38511F;
   font-weight: 500;
 }
 
@@ -392,7 +425,7 @@ body {
 }
 
 .gallery-section .section-title {
-  color: #4e6437;
+  color: #38511F;
   margin-bottom: 40px;
 }
 
@@ -469,7 +502,7 @@ body {
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background-color: #4e6437;
+  background-color: #38511F;
   color: white;
   border: none;
   border-radius: 8px;
@@ -482,7 +515,7 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: #5a7048;
+  background-color: #2d3f18;
 }
 
 /* Gift Info Section */
@@ -518,7 +551,7 @@ body {
 /* Final Section */
 .final-section {
   padding: 80px 0;
-  background-color: #4e6437;
+  background-color: #38511F;
   color: white;
   text-align: center;
 }
@@ -593,14 +626,14 @@ body {
 .thank-you-popup .popup-content h3 {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
-  color: #4e6437;
+  color: #38511F;
   margin-bottom: 20px;
 }
 
 .thank-you-popup .popup-content button {
   margin-top: 20px;
   padding: 10px 20px;
-  background-color: #4e6437;
+  background-color: #38511F;
   color: white;
   border: none;
   border-radius: 5px;
@@ -609,7 +642,7 @@ body {
 
 /* Gift Popup */
 .gift-popup h3 {
-  color: #4e6437;
+  color: #38511F;
   margin-bottom: 25px;
   font-size: 1.5rem;
 }
@@ -628,7 +661,7 @@ body {
 }
 
 .account-info h4 {
-  color: #4e6437;
+  color: #38511F;
   font-size: 1.2rem;
   margin-bottom: 10px;
   text-transform: uppercase;

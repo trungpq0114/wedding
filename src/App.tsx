@@ -170,7 +170,36 @@ const RSVPForm: React.FC = () => {
 
 function App() {
   const [showGiftInfo, setShowGiftInfo] = useState(false);
-  const weddingDate = new Date('2025-10-19T19:00:00');
+  const [audioStarted, setAudioStarted] = useState(false);
+  const weddingDate = new Date('2025-07-05T19:00:00');
+
+  // Setup audio like in original HTML
+  useEffect(() => {
+    const audio = new Audio('https://camcui.vn/bai65.mp3');
+
+    const handleUserInteraction = () => {
+      if (!audioStarted) {
+        audio.play().catch(console.error);
+        setAudioStarted(true);
+      }
+    };
+
+    // Auto replay when ended
+    audio.addEventListener('ended', () => {
+      audio.currentTime = 0;
+      audio.play().catch(console.error);
+    });
+
+    // Start audio on first user interaction
+    document.addEventListener('click', handleUserInteraction);
+    document.addEventListener('touch', handleUserInteraction);
+
+    return () => {
+      document.removeEventListener('click', handleUserInteraction);
+      document.removeEventListener('touch', handleUserInteraction);
+      audio.pause();
+    };
+  }, [audioStarted]);
 
   const timeline = [
     { time: '17:30', event: 'Ăn kem, chụp ảnh với photobooth' },
@@ -197,12 +226,12 @@ function App() {
           />
           <div className='hero-overlay'>
             <div className='hero-content'>
-              <h1 className='couple-names'>Minh Trí & Ly Ly</h1>
+              <h1 className='couple-names'>Quang Trung & Phương Thảo</h1>
               <h2 className='wedding-title'>Wedding Day</h2>
               <p className='wedding-subtitle'>
                 Chúng mình sẽ tổ chức lễ cưới vào
               </p>
-              <p className='wedding-date'>19 . 10 . 2025</p>
+              <p className='wedding-date'>05 . 07 . 2025</p>
             </div>
           </div>
         </div>
@@ -222,7 +251,7 @@ function App() {
               />
               <div className='info-content'>
                 <h3>Cô Dâu</h3>
-                <h4>Phạm Ly Ly</h4>
+                <h4>Đỗ Phương Thảo</h4>
               </div>
             </div>
 
@@ -234,19 +263,39 @@ function App() {
               />
               <div className='info-content'>
                 <h3>Chú Rể</h3>
-                <h4>Ngô Văn Minh Trí</h4>
+                <h4>Phạm Quang Trung</h4>
               </div>
             </div>
           </div>
 
           <div className='wedding-details'>
+            <div className='parents-info'>
+              <div className='parent-section'>
+                <h4>Nhà gái</h4>
+                <p>Ông. Phạm Tiến Hưng</p>
+                <p>Bà. Nguyễn Thị Thắng</p>
+                <p>TP. HCM</p>
+              </div>
+
+              <div className='parent-section'>
+                <h4>Nhà trai</h4>
+                <p>Ông. Ngô Văn Tiến</p>
+                <p>Bà. Phạm Thị Thu Thủy</p>
+                <p>TP. HCM</p>
+              </div>
+            </div>
+
+            <p className='invitation-text'>
+              Kính mời tham dự tiệc thân mật của chúng tôi
+            </p>
+
             <div className='detail-row'>
               <div className='detail-label'>Lễ Cưới</div>
               <div className='detail-value'>Chủ Nhật</div>
             </div>
             <div className='detail-row'>
               <div className='detail-label'>Ngày</div>
-              <div className='detail-value'>19 | 10 | 2025</div>
+              <div className='detail-value'>05 | 07 | 2025</div>
             </div>
             <div className='detail-separator'></div>
             <div className='detail-row'>
@@ -260,7 +309,7 @@ function App() {
               Số 54 Liễu Giai, Cống Vị, Ba Đình, Hà Nội
             </p>
             <p className='venue-time'>
-              Vào lúc 19h00 tối - Chủ nhật ngày 19/10/2025
+              Vào lúc 19h00 tối - Chủ nhật ngày 05/07/2025
             </p>
 
             <a
@@ -279,7 +328,7 @@ function App() {
       <section className='save-date-section'>
         <div className='container'>
           <h2 className='section-title elegance'>Save The Date</h2>
-          <h3 className='couple-name-script'>October</h3>
+          <h3 className='couple-name-script'>July</h3>
 
           {/* Calendar */}
           <div className='calendar'>
@@ -293,12 +342,12 @@ function App() {
               <span>Sun</span>
             </div>
             <div className='calendar-grid'>
+              {/* July 2025 starts on Tuesday, so add 1 empty cell */}
+              <div className='calendar-day empty'></div>
               {Array.from({ length: 31 }, (_, i) => (
                 <div
                   key={i + 1}
-                  className={`calendar-day ${
-                    i + 1 === 19 ? 'wedding-day' : ''
-                  }`}
+                  className={`calendar-day ${i + 1 === 5 ? 'wedding-day' : ''}`}
                 >
                   {i + 1}
                 </div>
@@ -399,7 +448,7 @@ function App() {
             <div className='gift-accounts'>
               <div className='account-info'>
                 <h4>Cô dâu</h4>
-                <p className='account-name'>Phạm Ly Ly</p>
+                <p className='account-name'>Đỗ Phương Thảo</p>
                 <p className='account-details'>
                   Vietcombank
                   <br />
@@ -409,7 +458,7 @@ function App() {
 
               <div className='account-info'>
                 <h4>Chú rể</h4>
-                <p className='account-name'>Ngô Văn Minh Trí</p>
+                <p className='account-name'>Phạm Quang Trung</p>
                 <p className='account-details'>
                   VPBank
                   <br />
