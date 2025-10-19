@@ -139,7 +139,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 26px;
   line-height: 1.4;
-  color: #315125;
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -148,7 +148,7 @@ body {
   font-family: MUZUViWSVAtTWuclldXItTGEtRGbGFpcUtUmVndWxhcivdGY;
   font-size: 36px;
   line-height: 1.6;
-  color: #315125;
+  color: #760507;
   text-align: center;
 }
 
@@ -156,7 +156,7 @@ body {
   font-family: QSTUSQUUSUGQUULUFRElVTSUVEY;
   font-size: 35px;
   line-height: 1.4;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -175,7 +175,7 @@ body {
   font-family: 'UVNHoaTay', cursive;
   font-size: 58px;
   line-height: 1.2;
-  color: #315125;
+  color: #760507;
   font-weight: 400;
   animation: fadeInUp 1.2s ease-out;
 }
@@ -210,7 +210,7 @@ body {
   font-family: MUZUViWSVAtQVJDSVRUWUEtQkVHQVRSSSPVEY;
   font-size: 172.53px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -221,7 +221,7 @@ body {
   font-family: QSTUSQUUSUGQUULUFRElVTSUVEY;
   font-size: 42px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-align: center;
@@ -292,14 +292,14 @@ body {
 .wedding-info {
   text-align: center;
   margin: 60px 0;
-  color: #315125;
+  color: #760507;
 }
 
 .location-title {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 21px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -309,7 +309,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: center;
 }
 
@@ -317,7 +317,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 19px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -327,7 +327,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 21px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 0px;
   text-align: center;
@@ -341,7 +341,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: center;
 }
 
@@ -357,7 +357,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 20px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -367,7 +367,7 @@ body {
   font-family: QSTUSQUUSUGQUULUFRElVTSUVEY;
   font-size: 46.54px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -383,7 +383,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 20px;
   line-height: 1.4;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-align: center;
@@ -402,7 +402,7 @@ body {
   font-family: TESQSSRUdVTEFSLlRURg;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   text-align: center;
 }
@@ -411,14 +411,14 @@ body {
   font-family: TESQSSRUdVTEFSLlRURg;
   font-size: 16px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: center;
 }
 
 /* Calendar */
 .calendar-section {
   text-align: center;
-  background-color: #315125;
+  background-color: #760507;
   margin-bottom: 40px;
   color: white;
   padding-bottom: 40px;
@@ -471,7 +471,7 @@ body {
 }
 
 .calendar-day.wedding-day {
-  background-color: #315125;
+  background-color: #760507;
   color: white;
   font-weight: bold;
   animation: pulse 2s infinite;
@@ -486,7 +486,7 @@ body {
 .countdown-title {
   font-family: 'Lora', serif;
   font-size: 20px;
-  color: #315125;
+  color: #760507;
   margin-bottom: 30px;
 }
 
@@ -500,7 +500,7 @@ body {
 .countdown-item {
   font-family: MUZUViWSVAtSEFTVEVHSSPVEY;
   font-size: 46px;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -508,7 +508,7 @@ body {
 .countdown-number {
   font-family: MUZUViWSVAtSEFTVEVHSSPVEY;
   font-size: 46px;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -517,7 +517,7 @@ body {
   font-family: MUZUViWSVAtTWuclldXItTGEtRGbGFpcUtUmVndWxhcivdGY;
   font-size: 54px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: center;
 }
 
@@ -580,7 +580,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 19px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: center;
 }
@@ -595,7 +595,7 @@ body {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 1px;
   text-align: left;
 }
@@ -604,7 +604,7 @@ body {
   font-family: RUJHYXJhbWuZCSZWdbGFyLnRZg;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: left;
 }
 
@@ -623,7 +623,7 @@ body {
 .gallery-section {
   position: relative;
   width: 100%;
-  background-color: #315125;
+  background-color: #760507;
   padding: 32px 20px;
 }
 
@@ -667,32 +667,59 @@ body {
 }
 
 .photo-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
   margin-bottom: 40px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 4px;
+}
+
+.photo-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
 }
 
 .photo-item {
-  aspect-ratio: 1;
+  flex: 0 0 85%;
+  scroll-snap-align: center;
   border-radius: 10px;
   overflow: hidden;
-  cursor: pointer;
+  cursor: grab;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .photo-item:hover {
   transform: scale(1.05);
 }
 
-.photo-item img {
+.photo-wrapper {
+  position: relative;
+  width: 100%;
+  /* padding-bottom will be set inline from React to preserve aspect ratio */
+  background: #f3f3f3;
+  height: 400px; /* Fixed height for consistent scrolling experience */
+}
+
+.photo-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.photo-item:active {
+  cursor: grabbing;
 }
 
 .full-album-btn {
-  background: #315125;
+  background: #760507;
   color: white;
   border: none;
   padding: 15px 30px;
@@ -742,7 +769,7 @@ body {
   font-family: RUJHYXJhbWuZCSZWdbGFyLnRZg;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-align: center;
   margin-bottom: 24px;
 }
@@ -750,7 +777,7 @@ body {
 .rsvp-form {}
 
 .form-group {
-  border: 1px solid #315125;
+  border: 1px solid #760507;
   border-radius: 16px;
   margin-bottom: 12px;
 }
@@ -761,14 +788,14 @@ body {
   font-family: RUJHYXJhbWuZCSZWdbGFyLnRZg;
   font-size: 17px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   width: 100%;
   padding: 0 10px;
 }
 
 .form-textarea::placeholder,
 .form-input::placeholder {
-  color: rgb(49, 81, 37);
+  color: #760507;
 }
 
 .form-input:focus-visible {
@@ -793,7 +820,7 @@ input:focus-visible {
 
 .submit-btn {
   width: 100%;
-  border: 1px solid #315125;
+  border: 1px solid #760507;
   cursor: pointer;
   transition: background-color 0.3s ease;
   height: 38px;
@@ -801,7 +828,7 @@ input:focus-visible {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 19px;
   line-height: 1.6;
-  color: rgb(49, 81, 37);
+  color: #760507;
   letter-spacing: 0px;
   text-align: center;
   border-radius: 24px;
@@ -817,7 +844,7 @@ input:focus-visible {
   text-align: center;
 
   width: 100%;
-  background-color: #315125;
+  background-color: #760507;
   height: 40px;
   display: flex;
   align-items: center;
@@ -902,20 +929,26 @@ input:focus-visible {
 
 .modal-content h3 {
   text-align: center;
-  color: #315125;
+  color: #760507;
   margin-bottom: 25px;
   font-family: 'Lora', serif;
 }
 
 .modal-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
   gap: 15px;
+  padding: 15px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .modal-gallery-grid img {
+  flex: 0 0 100%;
   width: 100%;
-  height: auto;
+  height: 80vh;
+  object-fit: contain;
+  scroll-snap-align: center;
   border-radius: 8px;
 }
 
@@ -1340,7 +1373,7 @@ html {
   font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 18px;
   line-height: 1.5;
-  color: rgb(49, 81, 37);
+  color: #760507;
   text-transform: uppercase;
   letter-spacing: 0px;
   text-align: center;
