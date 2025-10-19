@@ -115,7 +115,7 @@ const App3: React.FC = () => {
           onClick={toggleAudio}
           className='fixed bottom-6 right-0 bg-[#1a6617] rounded-full music'
         >
-          click music
+          Click music
         </button>
 
         <Hero />
@@ -365,8 +365,13 @@ const App3: React.FC = () => {
                   setShowGallery(true);
                   // Wait for modal to open then scroll to clicked image
                   setTimeout(() => {
-                    const modalImg = document.querySelector(`.modal-gallery-grid img:nth-child(${index + 1})`);
-                    modalImg?.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                    const modalImg = document.querySelector(
+                      `.modal-gallery-grid img:nth-child(${index + 1})`
+                    );
+                    modalImg?.scrollIntoView({
+                      behavior: 'smooth',
+                      inline: 'center',
+                    });
                   }, 100);
                 }}
               >
@@ -375,11 +380,12 @@ const App3: React.FC = () => {
                     className='photo-img'
                     src={photo}
                     alt={`Memory ${index + 1}`}
-                    draggable="false"
+                    draggable='false'
                     onLoad={(e) => {
                       const img = e.currentTarget as HTMLImageElement;
                       if (img.naturalWidth > 0) {
-                        const ratio = (img.naturalHeight / img.naturalWidth) * 100;
+                        const ratio =
+                          (img.naturalHeight / img.naturalWidth) * 100;
                         setRatios((prev) => ({ ...prev, [index]: ratio }));
                       }
                     }}
