@@ -1389,3 +1389,44 @@ html {
   background-repeat: repeat;
   background-attachment: scroll;
 }
+
+/* Audio Control Button */
+.audio-control-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.audio-control-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: scale(1.1);
+}
+
+.audio-control-btn:active {
+  transform: scale(0.95);
+}
+
+.music {
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
+  font-size: 14.41px;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  text-align: center;
+  padding: 4px 8px;
+}

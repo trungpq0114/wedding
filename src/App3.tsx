@@ -10,6 +10,7 @@ import {
 } from './constants';
 import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
+import { Hero } from './components/Hero';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -65,18 +66,58 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
 const App3: React.FC = () => {
   const [showGallery, setShowGallery] = useState(false);
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioRef] = useState<HTMLAudioElement>(() => {
+    const audio = new Audio('/audio/nhac.mp3');
+    audio.loop = true;
+    audio.volume = 0.5;
+    return audio;
+  });
+
+  const toggleAudio = () => {
+    if (isPlaying) {
+      audioRef.pause();
+    } else {
+      audioRef.play().catch(console.error);
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  useEffect(() => {
+    const handleCanPlay = () => {
+      // Auto play when audio is ready (some browsers may block this)
+      audioRef
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(() => {
+          setIsPlaying(false);
+        });
+    };
+
+    audioRef.addEventListener('canplay', handleCanPlay);
+
+    return () => {
+      audioRef.removeEventListener('canplay', handleCanPlay);
+      audioRef.pause();
+    };
+  }, [audioRef]);
 
   return (
     <div className='app3-container'>
+      {/* Audio Control Button */}
+
       {/* Section 1 - Hero Background */}
-      <section className='hero-section'>
-        <div className='hero-background'>
-          <img
-            src={imageUrls.hero}
-            alt='Wedding Hero'
-            className='hero-bg-img'
-          />
-        </div>
+      <section className='hero-section relative'>
+        <button
+          onClick={toggleAudio}
+          className='fixed bottom-6 right-0 bg-[#1a6617] rounded-full music'
+        >
+          click music
+        </button>
+
+        <Hero />
 
         <div className='absolute bottom-0 left-0 right-0'>
           <h1 className='font-[MUZUViWSVAtSEFTVEVHSSPVEY] text-center text-[129px] leading-[1] text-white uppercase'>
@@ -119,11 +160,7 @@ const App3: React.FC = () => {
         </div>
 
         <div className='absolute bottom-13 left-0 right-0 flex items-center justify-center'>
-          <img
-            src='https://w.ladicdn.com/s600x700/6322a62f2dad980013bb5005/mieg0732-20250508125140-vy0br.jpg'
-            alt=''
-            className='w-[291px]'
-          />
+          <img src='/wedding/35.webp' alt='' className='w-[291px]' />
         </div>
       </section>
 
@@ -141,14 +178,34 @@ const App3: React.FC = () => {
             <span>Sun</span>
           </div>
           <div className='calendar-body'>
-            {Array.from({ length: 31 }, (_, i) => (
-              <div
-                key={i + 1}
-                className={`calendar-day ${i + 1 === 5 ? 'wedding-day' : ''}`}
-              >
-                {i + 1}
-              </div>
+            {/* Empty cells for days before the month starts (if needed) */}
+            {/* Assuming the month starts on a Saturday (Thứ Bảy), we need 5 empty cells */}
+            {Array.from({ length: 5 }, (_, i) => (
+              <div key={`empty-${i}`} className='calendar-day empty'></div>
             ))}
+
+            {/* Days of the month */}
+            {Array.from({ length: 31 }, (_, i) => {
+              const day = i + 1;
+              return (
+                <div
+                  key={day}
+                  className={`relative calendar-day flex items-center justify-center ${
+                    day === 5 ? 'wedding-day' : ''
+                  }`}
+                >
+                  {day}
+
+                  {day === 29 && (
+                    <img
+                      src='/icon/heart.png'
+                      alt='heart'
+                      className='absolute'
+                    />
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -166,7 +223,9 @@ const App3: React.FC = () => {
             <p className='couple-wedding'>Phương Thảo</p>
           </div>
 
-          <div className='w-full h-[302px] bg-red-200'></div>
+          <div className='w-full h-[302px]'>
+            <div></div>
+          </div>
 
           {/* Wedding location and info */}
           <div className='wedding-info'>
@@ -232,16 +291,21 @@ const App3: React.FC = () => {
             <h3 className='location-title'>{weddingInfo.location}</h3>
             <p className='location-address'>Địa chỉ: {weddingInfo.address}</p>
 
-            <p className='chiduong !mt-10'>chỉ đường</p>
+            <a
+              target='_blank'
+              href='https://maps.app.goo.gl/YVL6pJnekMEcKsMc7'
+              className='flex items-center justify-center gap-2 !mt-10'
+            >
+              <img src='/icon/map.png' alt='map' className='w-6' />
+              <p className='chiduong'>chỉ đường</p>
+            </a>
           </div>
         </div>
       </section>
 
       <div className='relative'>
         <img
-          src={
-            'https://w.ladicdn.com/s750x750/6322a62f2dad980013bb5005/mieg0354-20250508125828-5hq7y.jpg'
-          }
+          src={'/wedding/27.webp'}
           alt='Timeline background'
           className='timeline-bg'
         />

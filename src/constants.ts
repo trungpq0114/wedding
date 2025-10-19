@@ -1,5 +1,5 @@
 // Wedding configuration constants
-export const weddingDate = new Date('2025-12-05T09:00:00');
+export const weddingDate = new Date('2025-11-29T16:30:00');
 
 // Timeline events data
 export const timelineEvents = [
@@ -25,26 +25,26 @@ export const timelineEvents = [
 
 // Gallery photos
 export const galleryPhotos = [
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0647-20250508130031-yc8xf.jpg',
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0732-20250508130744-snhot.jpg',
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0462-20250508125043-czpjc.jpg',
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0647-20250508130031-yc8xf.jpg',
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0732-20250508130744-snhot.jpg',
-  'https://w.ladicdn.com/s500x650/6322a62f2dad980013bb5005/mieg0462-20250508125043-czpjc.jpg',
+  '/wedding/4.webp',
+  '/wedding/4.webp',
+  '/wedding/4.webp',
+  '/wedding/4.webp',
+  '/wedding/4.webp',
+  '/wedding/4.webp',
 ];
 
 // Wedding information
 export const weddingInfo = {
   groom: 'Trung',
   bride: 'Thảo',
-  date: '05.07.2025',
-  location: 'Trường mầm non Hoàng Nông',
-  address: 'xóm La Lương - Hoàng Nông - Đại Từ - Thái Nguyên',
-  ceremonyTime: 'tiệc nhà gái được tổ chức vào lúc 9 giờ 00 phút',
-  lunarDate: '(Tức ngày 21 tháng 04 năm Ất Tỵ)',
-  dayName: 'chủ nhật',
-  dayNumber: '18',
-  month: 'tháng 5',
+  date: '29.11.2025',
+  location: 'TRUNG TÂM THƯƠNG MẠI VÀ DU LỊCH ĐÔNG TÂN',
+  address: 'TDP Khuynh Thạch, phường Sông Công, tỉnh Thái Nguyên',
+  ceremonyTime: 'Được tổ chức vào lúc 16 giờ 30',
+  lunarDate: '(tức ngày 10 tháng 10 năm Ất Tỵ)',
+  dayName: 'thứ bảy',
+  dayNumber: '29',
+  month: 'tháng 11',
   year: 'năm 2025',
 };
 
@@ -52,21 +52,24 @@ export const weddingInfo = {
 export const familyInfo = {
   groomFamily: {
     title: 'nhà trai',
-    father: 'Ông. Phan Đình Long',
-    mother: 'Bà. Nguyễn Thị Mai',
-    location: 'TP. Đà Nẵng',
+    father: 'Ông. Phạm Ngọc Bình',
+    mother: 'Bà. Đặng Thị Tâm',
+    location: 'Phường Sông Công',
   },
   brideFamily: {
     title: 'nhà gái',
-    father: 'Ông. Đặng Thái Công',
-    mother: 'Bà. Hoàng Mai Hương',
-    location: 'TP. Nha Trang',
+    father: 'Ông. Đỗ Viết Mười',
+    mother: 'Bà. Vũ Thị Thanh Huyền',
+    location: 'Phường Sông Công',
   },
 };
 
 // Image URLs
 export const imageUrls = {
-  hero: 'https://w.ladicdn.com/s750x950/6322a62f2dad980013bb5005/mieg0462-20250508125043-czpjc.jpg',
+  hero: '/wedding/4.webp',
+  hero1: '/wedding/35.webp',
+  hero2: '/wedding/67.webp',
+
   backgroundTexture:
     'https://w.ladicdn.com/s750x950/6322a62f2dad980013bb5005/icon-thiep-huyenpsd_0000_clear-white-plaster-texture-pattern-copy-14-20250703084107-2wpug.png',
   sectionBackground:
