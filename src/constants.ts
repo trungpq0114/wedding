@@ -84,8 +84,4 @@ export const imageUrls = {
     'https://w.ladicdn.com/s650x750/6322a62f2dad980013bb5005/thiepmoinew_0003_layer-35-20250223072522-lhq8z.png',
   decorBottomLeft:
     'https://w.ladicdn.com/s650x750/6322a62f2dad980013bb5005/thiepmoinew_0001_layer-38-20250223072522-t6bxw.png',
-  decorBottomRight:
-    'https://w.ladicdn.com/s650x750/6322a62f2dad980013bb5005/thiepmoinew_0000_layer-36-20250223072522-8vrkb.png',
-  eventIcon:
-    'https://w.ladicdn.com/s150x150/6322a62f2dad980013bb5005/thiep-minh-ha_0030_8f45942e450af5362b36d2122130e2f8-20250714051635-aj5es.png',
 };
