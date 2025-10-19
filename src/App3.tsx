@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App3.css';
 import {
   weddingDate,
@@ -67,7 +67,9 @@ const App3: React.FC = () => {
   const [showGallery, setShowGallery] = useState(false);
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [ratios, setRatios] = useState<Record<number, number>>({});
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+  const galleryRef = useRef<HTMLDivElement>(null);
   const [audioRef] = useState<HTMLAudioElement>(() => {
     const audio = new Audio('/audio/nhac.mp3');
     audio.loop = true;
@@ -84,6 +86,31 @@ const App3: React.FC = () => {
     setIsPlaying(!isPlaying);
   };
 
+  // Auto-slide effect
+  useEffect(() => {
+    if (!galleryRef.current || isUserInteracting || showGallery) return;
+
+    const scrollToNext = () => {
+      if (!galleryRef.current) return;
+      
+      const nextIndex = (currentImageIndex + 1) % galleryPhotos.length;
+      const nextItem = galleryRef.current.children[nextIndex] as HTMLElement;
+      
+      nextItem?.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'start',
+        block: 'nearest'
+      });
+      
+      setCurrentImageIndex(nextIndex);
+    };
+
+    const intervalId = setInterval(scrollToNext, 4000);
+
+    return () => clearInterval(intervalId);
+  }, [currentImageIndex, isUserInteracting, showGallery, galleryPhotos.length]);
+
+  // Audio effect
   useEffect(() => {
     const handleCanPlay = () => {
       // Auto play when audio is ready (some browsers may block this)
@@ -356,12 +383,26 @@ const App3: React.FC = () => {
             love that will last a lifetime.
           </p>
 
-          <div className='photo-grid'>
+          <div 
+            className='photo-grid'
+            ref={galleryRef}
+            onMouseEnter={() => setIsUserInteracting(true)}
+            onMouseLeave={() => setIsUserInteracting(false)}
+            onTouchStart={() => setIsUserInteracting(true)}
+            onScroll={() => {
+              if (!galleryRef.current) return;
+              const scrollLeft = galleryRef.current.scrollLeft;
+              const itemWidth = galleryRef.current.offsetWidth * 0.85; // 85% as defined in CSS
+              const newIndex = Math.round(scrollLeft / itemWidth);
+              setCurrentImageIndex(newIndex);
+            }}
+          >
             {galleryPhotos.map((photo, index) => (
               <div
                 key={index}
                 className='photo-item'
                 onClick={() => {
+                  setIsUserInteracting(true);
                   setShowGallery(true);
                   // Wait for modal to open then scroll to clicked image
                   setTimeout(() => {
@@ -376,13 +417,6 @@ const App3: React.FC = () => {
                     src={photo}
                     alt={`Memory ${index + 1}`}
                     draggable="false"
-                    onLoad={(e) => {
-                      const img = e.currentTarget as HTMLImageElement;
-                      if (img.naturalWidth > 0) {
-                        const ratio = (img.naturalHeight / img.naturalWidth) * 100;
-                        setRatios((prev) => ({ ...prev, [index]: ratio }));
-                      }
-                    }}
                   />
                 </div>
               </div>
