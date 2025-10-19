@@ -67,6 +67,7 @@ const App3: React.FC = () => {
   const [showGallery, setShowGallery] = useState(false);
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [ratios, setRatios] = useState<Record<number, number>>({});
   const [audioRef] = useState<HTMLAudioElement>(() => {
     const audio = new Audio('/audio/nhac.mp3');
     audio.loop = true;
@@ -360,9 +361,30 @@ const App3: React.FC = () => {
               <div
                 key={index}
                 className='photo-item'
-                onClick={() => setShowGallery(true)}
+                onClick={() => {
+                  setShowGallery(true);
+                  // Wait for modal to open then scroll to clicked image
+                  setTimeout(() => {
+                    const modalImg = document.querySelector(`.modal-gallery-grid img:nth-child(${index + 1})`);
+                    modalImg?.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+                  }, 100);
+                }}
               >
-                <img src={photo} alt={`Memory ${index + 1}`} />
+                <div className='photo-wrapper'>
+                  <img
+                    className='photo-img'
+                    src={photo}
+                    alt={`Memory ${index + 1}`}
+                    draggable="false"
+                    onLoad={(e) => {
+                      const img = e.currentTarget as HTMLImageElement;
+                      if (img.naturalWidth > 0) {
+                        const ratio = (img.naturalHeight / img.naturalWidth) * 100;
+                        setRatios((prev) => ({ ...prev, [index]: ratio }));
+                      }
+                    }}
+                  />
+                </div>
               </div>
             ))}
           </div>

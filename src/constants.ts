@@ -25,12 +25,12 @@ export const timelineEvents = [
 
 // Gallery photos
 export const galleryPhotos = [
+  '/wedding/3.webp',
   '/wedding/4.webp',
-  '/wedding/4.webp',
-  '/wedding/4.webp',
-  '/wedding/4.webp',
-  '/wedding/4.webp',
-  '/wedding/4.webp',
+  '/wedding/5.webp',
+  '/wedding/6.webp',
+  '/wedding/7.webp',
+  '/wedding/8.webp',
 ];
 
 // Wedding information
