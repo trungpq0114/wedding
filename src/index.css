@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* Internet Explorer & Edge cũ */
+  -ms-overflow-style: none;
+}
