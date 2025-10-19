@@ -33,6 +33,16 @@ export const galleryPhotos = [
   '/wedding/8.webp',
 ];
 
+// Extended album photos
+export const albumPhotos = [
+  '/wedding/58.webp',
+  '/wedding/59.webp',
+  '/wedding/60.webp',
+  '/wedding/61.webp',
+  '/wedding/62.webp',
+  '/wedding/63.webp',
+];
+
 // Wedding information
 export const weddingInfo = {
   groom: 'Trung',

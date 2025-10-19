@@ -1,0 +1,127 @@
+/* Section title styles */
+.section-title {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+    justify-content: center;
+}
+
+.section-title h6 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+}
+
+.section-title h2 {
+    font-family: 'Jost', sans-serif;
+    position: relative;
+}
+
+.section-title h2:after {
+    content: '';
+    width: 60px;
+    height: 2px;
+    background: #760507;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+}
+
+/* Add delay to fade-in animation */
+.delay-200 {
+    animation-delay: 200ms;
+}
+
+/* Carousel animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 1s ease-out forwards;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding: 1rem 0;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
+
+.carousel-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Card hover effects */
+.carousel-item .group:hover {
+  transform: translateY(-5px);
+}
+
+.carousel-item img {
+  transition: transform 0.3s ease-out;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Navigation buttons */
+.carousel-container button {
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.carousel-container button:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .carousel-container {
+    margin: 0 -0.5rem;
+  }
+  
+  .carousel-track {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}

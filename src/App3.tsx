@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App3.css';
+import './styles/carousel.css';
 import {
   weddingDate,
   timelineEvents,
   galleryPhotos,
+  albumPhotos,
   weddingInfo,
   familyInfo,
   imageUrls,
@@ -86,29 +88,26 @@ const App3: React.FC = () => {
     setIsPlaying(!isPlaying);
   };
 
-  // Auto-slide effect
-  useEffect(() => {
-    if (!galleryRef.current || isUserInteracting || showGallery) return;
-
-    const scrollToNext = () => {
-      if (!galleryRef.current) return;
+  // Disabled auto-slide for gallery to prevent conflicts with manual interaction
+  const handleScroll = () => {
+    if (!galleryRef.current) return;
+    const scrollLeft = galleryRef.current.scrollLeft;
+    const itemWidth = galleryRef.current.offsetWidth * 0.85;
+    const newIndex = Math.round(scrollLeft / itemWidth);
+    
+    if (newIndex !== currentImageIndex) {
+      setCurrentImageIndex(newIndex);
       
-      const nextIndex = (currentImageIndex + 1) % galleryPhotos.length;
-      const nextItem = galleryRef.current.children[nextIndex] as HTMLElement;
-      
-      nextItem?.scrollIntoView({
-        behavior: 'smooth',
-        inline: 'start',
-        block: 'nearest'
+      // Update active class
+      Array.from(galleryRef.current.children).forEach((child, idx) => {
+        if (idx === newIndex) {
+          child.classList.add('active');
+        } else {
+          child.classList.remove('active');
+        }
       });
-      
-      setCurrentImageIndex(nextIndex);
-    };
-
-    const intervalId = setInterval(scrollToNext, 4000);
-
-    return () => clearInterval(intervalId);
-  }, [currentImageIndex, isUserInteracting, showGallery, galleryPhotos.length]);
+    }
+  };
 
   // Audio effect
   useEffect(() => {
@@ -269,7 +268,7 @@ const App3: React.FC = () => {
                   {familyInfo.groomFamily.location}
                 </p>
               </div>
-              <div className='w-[2px] h-full bg-[#315125]'></div>
+              <div className='w-[2px] h-full bg-[#760507]'></div>
               <div className='family-side'>
                 <h4>{familyInfo.brideFamily.title}</h4>
                 <p>
@@ -297,15 +296,15 @@ const App3: React.FC = () => {
 
               <div className='date-details'>
                 <div className='flex flex-col gap-1'>
-                  <div className='w-full h-[1px] bg-[#315125]'></div>
+                  <div className='w-full h-[1px] bg-[#760507]'></div>
                   <span className='month'>{weddingInfo.month}</span>
-                  <div className='w-full h-[1px] bg-[#315125]'></div>
+                  <div className='w-full h-[1px] bg-[#760507]'></div>
                 </div>
                 <span className='day-number'>{weddingInfo.dayNumber}</span>
                 <div className='flex flex-col gap-1'>
-                  <div className='w-full h-[1px] bg-[#315125]'></div>
+                  <div className='w-full h-[1px] bg-[#760507]'></div>
                   <span className='year'>{weddingInfo.year}</span>
-                  <div className='w-full h-[1px] bg-[#315125]'></div>
+                  <div className='w-full h-[1px] bg-[#760507]'></div>
                 </div>
               </div>
 
@@ -389,13 +388,7 @@ const App3: React.FC = () => {
             onMouseEnter={() => setIsUserInteracting(true)}
             onMouseLeave={() => setIsUserInteracting(false)}
             onTouchStart={() => setIsUserInteracting(true)}
-            onScroll={() => {
-              if (!galleryRef.current) return;
-              const scrollLeft = galleryRef.current.scrollLeft;
-              const itemWidth = galleryRef.current.offsetWidth * 0.85; // 85% as defined in CSS
-              const newIndex = Math.round(scrollLeft / itemWidth);
-              setCurrentImageIndex(newIndex);
-            }}
+            onScroll={handleScroll}
           >
             {galleryPhotos.map((photo, index) => (
               <div
@@ -403,12 +396,8 @@ const App3: React.FC = () => {
                 className='photo-item'
                 onClick={() => {
                   setIsUserInteracting(true);
+                  setCurrentImageIndex(index);
                   setShowGallery(true);
-                  // Wait for modal to open then scroll to clicked image
-                  setTimeout(() => {
-                    const modalImg = document.querySelector(`.modal-gallery-grid img:nth-child(${index + 1})`);
-                    modalImg?.scrollIntoView({ behavior: 'smooth', inline: 'center' });
-                  }, 100);
                 }}
               >
                 <div className='photo-wrapper'>
@@ -421,6 +410,82 @@ const App3: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5.5 - Album Carousel */}
+      <section className="album-carousel-section py-20">
+        <div className="container mx-auto px-4">
+          <div className="section-title text-center">
+            <div className="w-full">
+              <h6 className="text-[#760507] text-sm uppercase tracking-widest mb-3 opacity-0 animate-fade-in">
+                Celebrate Our Love
+              </h6>
+              <h2 className="text-4xl font-semibold mb-6 opacity-0 animate-fade-in delay-200">
+                Join Us as We Begin Our Forever
+              </h2>
+            </div>
+          </div>
+          
+          <div className="carousel-container relative overflow-hidden">
+            <div className="carousel-track flex transition-transform duration-500 ease-out">
+              {albumPhotos.map((photo, index) => (
+                <div 
+                  key={index}
+                  className="carousel-item min-w-[75%] opacity-0 animate-slide-in"
+                  style={{
+                    animationDelay: `${index * 0.2}s`,
+                  }}
+                >
+                  <div 
+                    className="relative overflow-hidden rounded-lg shadow-xl transition-transform duration-300 hover:scale-105 cursor-pointer"
+                    onClick={() => {
+                      setCurrentImageIndex(index);
+                      setShowGallery(true);
+                    }}
+                  >
+                    <img
+                      src={photo}
+                      alt={`Wedding Album ${index + 1}`}
+                      className="w-full h-[400px] object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors z-10"
+              onClick={() => {
+                const track = document.querySelector('.carousel-track');
+                if (track) {
+                  const currentScroll = track.scrollLeft;
+                  track.scrollTo({
+                    left: currentScroll - window.innerWidth * 0.75,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
+              &#8592;
+            </button>
+            
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors z-10"
+              onClick={() => {
+                const track = document.querySelector('.carousel-track');
+                if (track) {
+                  const currentScroll = track.scrollLeft;
+                  track.scrollTo({
+                    left: currentScroll + window.innerWidth * 0.75,
+                    behavior: 'smooth'
+                  });
+                }
+              }}
+            >
+              &#8594;
+            </button>
           </div>
         </div>
       </section>
@@ -442,10 +507,41 @@ const App3: React.FC = () => {
               x
             </button>
             <h3>Album ảnh cưới</h3>
-            <div className='modal-gallery-grid'>
-              {galleryPhotos.map((photo, index) => (
-                <img key={index} src={photo} alt={`Gallery ${index + 1}`} />
-              ))}
+            <div className='modal-image-container'>
+              <button 
+                className='nav-btn prev'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => 
+                    prev > 0 ? prev - 1 : galleryPhotos.length - 1
+                  );
+                }}
+              >
+                ‹
+              </button>
+              <img 
+                key={currentImageIndex}
+                src={galleryPhotos[currentImageIndex]} 
+                alt={`Gallery ${currentImageIndex + 1}`}
+                className='modal-image'
+                style={{
+                  willChange: 'transform, opacity'
+                }}
+              />
+              <button 
+                className='nav-btn next'
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => 
+                    (prev + 1) % galleryPhotos.length
+                  );
+                }}
+              >
+                ›
+              </button>
+            </div>
+            <div className='modal-counter'>
+              {currentImageIndex + 1} / {galleryPhotos.length}
             </div>
           </div>
         </div>
