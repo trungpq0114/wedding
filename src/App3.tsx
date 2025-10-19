@@ -84,9 +84,7 @@ const App3: React.FC = () => {
           </h1>
 
           <div className='flex items-center justify-center'>
-            <p className='font-[MUZUViWSVAtSEFTVEVHSSPVEY] text-center text-[129px] leading-[1] text-white uppercase'>
-              &
-            </p>
+            <p className='aaa'>&</p>
 
             <h1 className='font-[MUZUViWSVAtSEFTVEVHSSPVEY] text-[129px] leading-[1] text-white uppercase'>
               Thảo
