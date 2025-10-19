@@ -67,7 +67,7 @@ const App3: React.FC = () => {
   const [showGallery, setShowGallery] = useState(false);
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [ratios, setRatios] = useState<Record<number, number>>({});
+  const [_, setRatios] = useState<Record<number, number>>({});
   const [audioRef] = useState<HTMLAudioElement>(() => {
     const audio = new Audio('/audio/nhac.mp3');
     audio.loop = true;
