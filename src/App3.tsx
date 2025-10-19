@@ -141,7 +141,7 @@ const App3: React.FC = () => {
           onClick={toggleAudio}
           className='fixed bottom-6 right-0 bg-[#1a6617] rounded-full music'
         >
-          click music
+          Click music
         </button>
 
         <Hero />
