@@ -13,14 +13,6 @@ const galleryPhotos = [
 export function Gallery() {
   return (
     <section className='gallery-section'>
-      {/* <div className='gallery-background'>
-        <img
-          src={imageUrls.sectionBackground}
-          alt='Gallery background'
-          className='gallery-bg'
-        />
-      </div> */}
-
       <div className='gallery-content'>
         <h2 className='gallery-title'>Our Memories</h2>
         <p className='gallery-description'>
