@@ -23,26 +23,6 @@ export const timelineEvents = [
   },
 ];
 
-// Gallery photos
-export const galleryPhotos = [
-  '/wedding/3.webp',
-  '/wedding/4.webp',
-  '/wedding/5.webp',
-  '/wedding/6.webp',
-  '/wedding/7.webp',
-  '/wedding/8.webp',
-];
-
-// Extended album photos
-export const albumPhotos = [
-  '/wedding/58.webp',
-  '/wedding/59.webp',
-  '/wedding/60.webp',
-  '/wedding/61.webp',
-  '/wedding/62.webp',
-  '/wedding/63.webp',
-];
-
 // Wedding information
 export const weddingInfo = {
   groom: 'Trung',
@@ -76,9 +56,9 @@ export const familyInfo = {
 
 // Image URLs
 export const imageUrls = {
-  hero: '/wedding/4.webp',
-  hero1: '/wedding/35.webp',
-  hero2: '/wedding/67.webp',
+  hero: '/optimized/4-w1600.webp',
+  hero1: '/optimized/35-w1600.webp',
+  hero2: '/optimized/67-w1600.webp',
 
   backgroundTexture:
     'https://w.ladicdn.com/s750x950/6322a62f2dad980013bb5005/icon-thiep-huyenpsd_0000_clear-white-plaster-texture-pattern-copy-14-20250703084107-2wpug.png',

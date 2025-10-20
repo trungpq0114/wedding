@@ -35,13 +35,75 @@ body {
   background-color: #fff;
 }
 
+/* Responsive Container */
+@media (min-width: 768px) {
+  .app3-container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app3-container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .app3-container {
+    max-width: 1000px;
+  }
+}
+
+/* Responsive Typography */
+.hero-title {
+  font-family: 'MUZUViWSVAtSEFTVEVHSSPVEY';
+  text-align: center;
+  font-size: 80px;
+  line-height: 1;
+  color: white;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 140px;
+  }
+}
+
+.hero-ampersand {
+  font-family: 'MUZUViWSVAtQVJDSVRUWUEtQkVHQVRSSSPVEY';
+  font-size: 80px;
+  line-height: 1;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .hero-ampersand {
+    font-size: 120px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-ampersand {
+    font-size: 140px;
+  }
+}
+
 /* Section 1 - Hero */
 .hero-section {
   position: relative;
   width: 100%;
-  height: 630px;
+  height: 100vh;
   overflow: hidden;
 }
+
 
 .hero-background {
   position: absolute;
@@ -57,6 +119,13 @@ body {
   object-fit: cover;
 }
 
+/* Hero Swiper Styles */
+.hero-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+
 /* Section 2 - Main Wedding Info */
 .main-section {
   position: relative;
@@ -64,6 +133,20 @@ body {
   min-height: 675px;
   overflow: hidden;
   background: linear-gradient(180deg, #f8f5f0 0%, #fff 100%);
+}
+
+@media (min-width: 768px) {
+  .main-section {
+    min-height: 800px;
+    padding: 40px 60px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-section {
+    min-height: 900px;
+    padding: 60px 80px;
+  }
 }
 
 .main-background {
@@ -204,6 +287,18 @@ body {
   width: 100%;
   overflow: hidden;
   padding: 0 16px;
+}
+
+@media (min-width: 768px) {
+  .details-section {
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .details-section {
+    padding: 0 60px;
+  }
 }
 
 .ladi-headline {
@@ -396,6 +491,22 @@ body {
   gap: 0px;
   margin: 40px 0;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  .family-info {
+    margin: 60px auto;
+    max-width: 600px;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .family-info {
+    margin: 80px auto;
+    max-width: 700px;
+    gap: 30px;
+  }
 }
 
 .family-side h4 {
@@ -675,13 +786,32 @@ body {
   margin-bottom: 40px;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
   padding: 4px;
 }
 
+@media (min-width: 768px) {
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    overflow: visible;
+  }
+}
+
+@media (min-width: 1024px) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+}
+
 .photo-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
+  /* Chrome, Safari and Opera */
 }
 
 .photo-item {
@@ -710,7 +840,8 @@ body {
   width: 100%;
   /* padding-bottom will be set inline from React to preserve aspect ratio */
   background: #f3f3f3;
-  height: 400px; /* Fixed height for consistent scrolling experience */
+  height: 400px;
+  /* Fixed height for consistent scrolling experience */
 }
 
 .photo-img {
@@ -966,6 +1097,7 @@ input:focus-visible {
     opacity: 0;
     transform: scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -981,6 +1113,7 @@ input:focus-visible {
     opacity: 1;
     transform: scale(1);
   }
+
   to {
     opacity: 0;
     transform: scale(1.05);
@@ -996,6 +1129,7 @@ input:focus-visible {
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1116,6 +1250,61 @@ input:focus-visible {
 
   .photo-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Additional responsive improvements */
+@media (min-width: 768px) {
+  .main-title {
+    font-size: 32px;
+  }
+
+  .save-date {
+    font-size: 48px;
+  }
+
+  .wedding-date {
+    font-size: 28px;
+  }
+
+  .timeline-events {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .gallery-content {
+    padding: 0 40px;
+  }
+
+  .rsvp-content {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main-title {
+    font-size: 38px;
+  }
+
+  .save-date {
+    font-size: 56px;
+  }
+
+  .wedding-date {
+    font-size: 32px;
+  }
+
+  .timeline-events {
+    max-width: 700px;
+  }
+
+  .gallery-content {
+    padding: 0 60px;
+  }
+
+  .rsvp-content {
+    max-width: 600px;
   }
 }
 
@@ -1480,7 +1669,7 @@ html {
 }
 
 .image-container {
-  background-image: url('/wedding/72.webp');
+  background-image: url('/optimized/72-w1600.webp');
   background-size: cover;
   background-origin: content-box;
   background-position: 50% 0%;
@@ -1527,6 +1716,16 @@ html {
   backdrop-filter: blur(10px);
 }
 
+@media (min-width: 768px) {
+  .audio-control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    top: 30px;
+    right: 30px;
+  }
+}
+
 .audio-control-btn:hover {
   background: rgba(0, 0, 0, 0.9);
   transform: scale(1.1);
@@ -1545,4 +1744,69 @@ html {
   letter-spacing: 0px;
   text-align: center;
   padding: 4px 8px;
+}
+
+/* Swiper Core CSS */
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  display: block;
+}
+
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  transition-property: transform;
+  transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+  box-sizing: content-box;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+  display: block;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Swiper Pagination */
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transition: opacity 0.3s;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0.2;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fff;
 }

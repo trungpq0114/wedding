@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App3.css';
 import './styles/carousel.css';
+
 import {
   weddingDate,
   timelineEvents,
-  galleryPhotos,
-  albumPhotos,
   weddingInfo,
   familyInfo,
   imageUrls,
@@ -13,6 +12,8 @@ import {
 import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
 import { Hero } from './components/Hero';
+import { Gallery } from './components/Gallery';
+import { Album } from './components/Album';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -66,97 +67,21 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
 };
 
 const App3: React.FC = () => {
-  const [showGallery, setShowGallery] = useState(false);
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isUserInteracting, setIsUserInteracting] = useState(false);
-  const galleryRef = useRef<HTMLDivElement>(null);
-  const [audioRef] = useState<HTMLAudioElement>(() => {
-    const audio = new Audio('/audio/nhac.mp3');
-    audio.loop = true;
-    audio.volume = 0.5;
-    return audio;
-  });
-
-  const toggleAudio = () => {
-    if (isPlaying) {
-      audioRef.pause();
-    } else {
-      audioRef.play().catch(console.error);
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  // Disabled auto-slide for gallery to prevent conflicts with manual interaction
-  const handleScroll = () => {
-    if (!galleryRef.current) return;
-    const scrollLeft = galleryRef.current.scrollLeft;
-    const itemWidth = galleryRef.current.offsetWidth * 0.85;
-    const newIndex = Math.round(scrollLeft / itemWidth);
-    
-    if (newIndex !== currentImageIndex) {
-      setCurrentImageIndex(newIndex);
-      
-      // Update active class
-      Array.from(galleryRef.current.children).forEach((child, idx) => {
-        if (idx === newIndex) {
-          child.classList.add('active');
-        } else {
-          child.classList.remove('active');
-        }
-      });
-    }
-  };
-
-  // Audio effect
-  useEffect(() => {
-    const handleCanPlay = () => {
-      // Auto play when audio is ready (some browsers may block this)
-      audioRef
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch(() => {
-          setIsPlaying(false);
-        });
-    };
-
-    audioRef.addEventListener('canplay', handleCanPlay);
-
-    return () => {
-      audioRef.removeEventListener('canplay', handleCanPlay);
-      audioRef.pause();
-    };
-  }, [audioRef]);
 
   return (
     <div className='app3-container'>
-      {/* Audio Control Button */}
-
       {/* Section 1 - Hero Background */}
       <section className='hero-section relative'>
-        <button
-          onClick={toggleAudio}
-          className='fixed bottom-6 right-0 bg-[#1a6617] rounded-full music'
-        >
-          Click music
-        </button>
-
         <Hero />
 
-        <div className='absolute bottom-0 left-0 right-0'>
-          <h1 className='font-[MUZUViWSVAtSEFTVEVHSSPVEY] text-center text-[129px] leading-[1] text-white uppercase'>
-            Trung
-          </h1>
+        <div className='absolute bottom-0 left-0 right-0 z-10'>
+          <h1 className='hero-title'>Trung</h1>
 
           <div className='flex items-center justify-center'>
-            <p className='aaa'>&</p>
+            <p className='hero-ampersand'>&</p>
 
-            <h1 className='font-[MUZUViWSVAtSEFTVEVHSSPVEY] text-[129px] leading-[1] text-white uppercase'>
-              Thảo
-            </h1>
+            <h1 className='hero-title'>Thảo</h1>
           </div>
         </div>
       </section>
@@ -187,7 +112,12 @@ const App3: React.FC = () => {
         </div>
 
         <div className='absolute bottom-13 left-0 right-0 flex items-center justify-center'>
-          <img src='/wedding/35.webp' alt='' className='w-[291px]' />
+          <img
+            src='/optimized/35-w1600.webp'
+            alt=''
+            className='w-[291px]'
+            loading='lazy'
+          />
         </div>
       </section>
 
@@ -250,8 +180,14 @@ const App3: React.FC = () => {
             <p className='couple-wedding'>Phương Thảo</p>
           </div>
 
-          <div className='w-full h-[302px]'>
-            <div></div>
+          <div className='w-full h-[302px] flex items-center gap-4'>
+            <div>
+              <img src='/optimized/34-w1600.webp' alt='image' loading='lazy' />
+            </div>
+
+            <div>
+              <img src='/optimized/10-w1600.webp' alt='image' loading='lazy' />
+            </div>
           </div>
 
           {/* Wedding location and info */}
@@ -330,9 +266,9 @@ const App3: React.FC = () => {
         </div>
       </section>
 
-      <div className='relative'>
+      <section className='relative'>
         <img
-          src={'/wedding/27.webp'}
+          src={'/optimized/27-w1600.webp'}
           alt='Timeline background'
           className='timeline-bg'
         />
@@ -340,7 +276,7 @@ const App3: React.FC = () => {
         <h2 className='timeline-title absolute bottom-0 left-1/2 transform -translate-x-1/2'>
           Timeline
         </h2>
-      </div>
+      </section>
 
       {/* Section 4 - Timeline */}
       <section className='timeline-section !py-10 !px-5'>
@@ -363,132 +299,10 @@ const App3: React.FC = () => {
       </section>
 
       {/* Section 5 - Our Memories Gallery */}
-      <section className='gallery-section'>
-        <div className='gallery-background'>
-          <img
-            src={imageUrls.sectionBackground}
-            alt='Gallery background'
-            className='gallery-bg'
-          />
-        </div>
-
-        <div className='gallery-content'>
-          <h2 className='gallery-title'>Our Memories</h2>
-          <p className='gallery-description'>
-            This album captures the most beautiful moments of our special
-            day—filled with love, joy, and unforgettable memories. From our
-            heartfelt vows to the first dance, every photo tells a story of our
-            journey together. Surrounded by family and friends, we celebrated a
-            love that will last a lifetime.
-          </p>
-
-          <div 
-            className='photo-grid'
-            ref={galleryRef}
-            onMouseEnter={() => setIsUserInteracting(true)}
-            onMouseLeave={() => setIsUserInteracting(false)}
-            onTouchStart={() => setIsUserInteracting(true)}
-            onScroll={handleScroll}
-          >
-            {galleryPhotos.map((photo, index) => (
-              <div
-                key={index}
-                className='photo-item'
-                onClick={() => {
-                  setIsUserInteracting(true);
-                  setCurrentImageIndex(index);
-                  setShowGallery(true);
-                }}
-              >
-                <div className='photo-wrapper'>
-                  <img
-                    className='photo-img'
-                    src={photo}
-                    alt={`Memory ${index + 1}`}
-                    draggable="false"
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Gallery />
 
       {/* Section 5.5 - Album Carousel */}
-      <section className="album-carousel-section py-20">
-        <div className="container mx-auto px-4">
-          <div className="section-title text-center">
-            <div className="w-full">
-              <h6 className="text-[#760507] text-sm uppercase tracking-widest mb-3 opacity-0 animate-fade-in">
-                Celebrate Our Love
-              </h6>
-              <h2 className="text-4xl font-semibold mb-6 opacity-0 animate-fade-in delay-200">
-                Join Us as We Begin Our Forever
-              </h2>
-            </div>
-          </div>
-          
-          <div className="carousel-container relative overflow-hidden">
-            <div className="carousel-track flex transition-transform duration-500 ease-out">
-              {albumPhotos.map((photo, index) => (
-                <div 
-                  key={index}
-                  className="carousel-item min-w-[75%] opacity-0 animate-slide-in"
-                  style={{
-                    animationDelay: `${index * 0.2}s`,
-                  }}
-                >
-                  <div 
-                    className="relative overflow-hidden rounded-lg shadow-xl transition-transform duration-300 hover:scale-105 cursor-pointer"
-                    onClick={() => {
-                      setCurrentImageIndex(index);
-                      setShowGallery(true);
-                    }}
-                  >
-                    <img
-                      src={photo}
-                      alt={`Wedding Album ${index + 1}`}
-                      className="w-full h-[400px] object-cover"
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-            
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors z-10"
-              onClick={() => {
-                const track = document.querySelector('.carousel-track');
-                if (track) {
-                  const currentScroll = track.scrollLeft;
-                  track.scrollTo({
-                    left: currentScroll - window.innerWidth * 0.75,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-            >
-              &#8592;
-            </button>
-            
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-gray-800 hover:bg-gray-100 transition-colors z-10"
-              onClick={() => {
-                const track = document.querySelector('.carousel-track');
-                if (track) {
-                  const currentScroll = track.scrollLeft;
-                  track.scrollTo({
-                    left: currentScroll + window.innerWidth * 0.75,
-                    behavior: 'smooth'
-                  });
-                }
-              }}
-            >
-              &#8594;
-            </button>
-          </div>
-        </div>
-      </section>
+      <Album />
 
       {/* Section 6 - RSVP */}
       <section className='rsvp-section'>
@@ -499,66 +313,12 @@ const App3: React.FC = () => {
         </button>
       </section>
 
-      {/* Gallery Modal */}
-      {showGallery && (
-        <div className='gallery-modal' onClick={() => setShowGallery(false)}>
-          <div className='modal-content' onClick={(e) => e.stopPropagation()}>
-            <button className='close-btn' onClick={() => setShowGallery(false)}>
-              x
-            </button>
-            <h3>Album ảnh cưới</h3>
-            <div className='modal-image-container'>
-              <button 
-                className='nav-btn prev'
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentImageIndex((prev) => 
-                    prev > 0 ? prev - 1 : galleryPhotos.length - 1
-                  );
-                }}
-              >
-                ‹
-              </button>
-              <img 
-                key={currentImageIndex}
-                src={galleryPhotos[currentImageIndex]} 
-                alt={`Gallery ${currentImageIndex + 1}`}
-                className='modal-image'
-                style={{
-                  willChange: 'transform, opacity'
-                }}
-              />
-              <button 
-                className='nav-btn next'
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setCurrentImageIndex((prev) => 
-                    (prev + 1) % galleryPhotos.length
-                  );
-                }}
-              >
-                ›
-              </button>
-            </div>
-            <div className='modal-counter'>
-              {currentImageIndex + 1} / {galleryPhotos.length}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Mung Cuoi Modal */}
-      <MungCuoiModal
-        isOpen={showMungCuoiModal}
-        onClose={() => setShowMungCuoiModal(false)}
-      />
-
-      <div>
+      <section>
         <p className='countdown-label'>Countdown</p>
         <CountdownTimer targetDate={weddingDate} />
-      </div>
+      </section>
 
-      <div className='image-container flex flex-col items-center justify-between'>
+      <section className='image-container flex flex-col items-center justify-between'>
         <p className='loichuc !px-5 !pt-5'>
           Cảm ơn bạn đã dành tình cảm cho chúng mình! Sự hiện diện của bạn chính
           là món quà ý nghĩa nhất, và chúng mình vô cùng trân quý khi được cùng
@@ -566,7 +326,13 @@ const App3: React.FC = () => {
         </p>
 
         <p className='thank-you !mb-5'>Thank you!</p>
-      </div>
+      </section>
+
+      {/* Mung Cuoi Modal */}
+      <MungCuoiModal
+        isOpen={showMungCuoiModal}
+        onClose={() => setShowMungCuoiModal(false)}
+      />
     </div>
   );
 };

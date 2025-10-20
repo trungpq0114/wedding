@@ -1,36 +1,26 @@
 /* Section title styles */
 .section-title {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 60px;
-    justify-content: center;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .section-title h6 {
-    font-family: 'Jost', sans-serif;
-    font-weight: 500;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
 }
 
 .section-title h2 {
-    font-family: 'Jost', sans-serif;
-    position: relative;
+  font-family: 'Jost', sans-serif;
+  position: relative;
 }
 
-.section-title h2:after {
-    content: '';
-    width: 60px;
-    height: 2px;
-    background: #760507;
-    position: absolute;
-    left: 50%;
-    bottom: -15px;
-    transform: translateX(-50%);
-}
 
 /* Add delay to fade-in animation */
 .delay-200 {
-    animation-delay: 200ms;
+  animation-delay: 200ms;
 }
 
 /* Carousel animations */
@@ -38,6 +28,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -48,6 +39,7 @@
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -76,13 +68,16 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
   padding: 1rem 0;
 }
 
 .carousel-track::-webkit-scrollbar {
-  display: none; /* Chrome/Safari/Opera */
+  display: none;
+  /* Chrome/Safari/Opera */
 }
 
 .carousel-item {
@@ -119,7 +114,7 @@
   .carousel-container {
     margin: 0 -0.5rem;
   }
-  
+
   .carousel-track {
     gap: 1rem;
     padding: 0.5rem;
