@@ -13,6 +13,7 @@ import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
 import { Hero } from './components/Hero';
 import { Gallery } from './components/Gallery';
+import { GalleryAlt } from './components/GalleryAlt';
 import { Album } from './components/Album';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
@@ -113,7 +114,7 @@ const App3: React.FC = () => {
 
         <div className='absolute bottom-13 left-0 right-0 flex items-center justify-center'>
           <img
-            src='/optimized/35-w1600.webp'
+            src='/optimized/68-w1600.webp'
             alt=''
             className='w-[291px]'
             loading='lazy'
@@ -182,11 +183,11 @@ const App3: React.FC = () => {
 
           <div className='w-full h-[302px] flex items-center gap-4'>
             <div>
-              <img src='/optimized/34-w1600.webp' alt='image' loading='lazy' />
+              <img src='/wedding/73.webp' alt='image' loading='lazy' />
             </div>
 
             <div>
-              <img src='/optimized/10-w1600.webp' alt='image' loading='lazy' />
+              <img src='/wedding/74.webp' alt='image' loading='lazy' />
             </div>
           </div>
 
@@ -298,11 +299,14 @@ const App3: React.FC = () => {
         </div>
       </section>
 
-      {/* Section 5 - Our Memories Gallery */}
-      <Gallery />
+  {/* Section 5 - Our Memories Gallery */}
+  <Gallery />
 
-      {/* Section 5.5 - Album Carousel */}
-      <Album />
+  {/* Section 5.25 - Alternative Gallery */}
+  <GalleryAlt />
+
+  {/* Section 5.5 - Album Carousel */}
+  <Album />
 
       {/* Section 6 - RSVP */}
       <section className='rsvp-section'>

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 
-const galleryPhotos = [
+const galleryPhotos_1 = [
   '/optimized/3-w1600.webp',
   '/optimized/4-w1600.webp',
   '/optimized/5-w1600.webp',
@@ -35,7 +35,7 @@ export function Gallery() {
             }}
             className='hero-swiper'
           >
-            {galleryPhotos.map((image, index) => (
+            {galleryPhotos_1.map((image, index) => (
               <SwiperSlide key={index}>
                 <img
                   src={image}
@@ -49,5 +49,6 @@ export function Gallery() {
         </div>
       </div>
     </section>
+    
   );
 }

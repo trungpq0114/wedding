@@ -39,3 +39,13 @@ declare module '*.avif?*' {
   const value: ImageToolsPicture;
   export default value;
 }
+
+// Allow importing plain CSS files (including third-party CSS like swiper)
+declare module '*.css';
+
+// Some third-party packages import sub-path CSS modules (swiper).
+// Provide explicit declarations to avoid "Cannot find module '.../css'" errors.
+declare module 'swiper/css';
+declare module 'swiper/css/navigation';
+declare module 'swiper/css/pagination';
+declare module 'swiper/css/effect-coverflow';
