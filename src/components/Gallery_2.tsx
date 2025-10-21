@@ -22,12 +22,12 @@ export function Gallery_2() {
   return (
     <section className="gallery-alt-section">
       <div className="gallery-alt-content">
-        <div className='section-title text-center'>
-          <h6 className='event-title uppercase'>Celebrate Our Love</h6>
-          <h2 className='event-description'>Join Us as We Begin Our Forever</h2>
+        <div className='section-title text-center px-4 sm:px-6 md:px-8 mb-6 sm:mb-8 md:mb-10'>
+          <h6 className='event-title uppercase text-sm sm:text-base md:text-lg mb-2'>Celebrate Our Love</h6>
+          <h2 className='event-description text-xl sm:text-2xl md:text-3xl font-semibold'>Join Us as We Begin Our Forever</h2>
         </div>
     
-  <div className="gallery-alt-wrapper" style={{ height: '140vh' }}>
+  <div className="gallery-alt-wrapper" style={{ height: '80vh' }}>
           <Swiper
             modules={[Autoplay, Navigation, Pagination, EffectCreative]}
             effect="creative"
@@ -36,17 +36,15 @@ export function Gallery_2() {
             slidesPerView={1}
             creativeEffect={{
               prev: {
-                // previous slide moves out to the left/up with scale
-                translate: ["-20%", 0, -200],
-                rotate: [0, 10, 0],
-                scale: 0.85,
+                translate: [0, "-20%", -200],
+                rotate: [0, 0, -5],
+                scale: 0.9,
                 opacity: 0.7,
               },
               next: {
-                // next slide comes from the right/down with depth
-                translate: ["20%", 0, -200],
-                rotate: [0, -10, 0],
-                scale: 0.85,
+                translate: [0, "20%", -200],
+                rotate: [0, 0, 5],
+                scale: 0.9,
                 opacity: 0.7,
               },
             }}
@@ -58,36 +56,33 @@ export function Gallery_2() {
           >
             {galleryPhotos_2.map((item, idx) => (
               <SwiperSlide key={idx} style={{ width: '100%' }}>
-                <div className="slide-card w-full overflow-hidden relative" style={{ height: '140vh' }}>
+                <div className="slide-card w-full overflow-hidden relative" style={{ height: '80vh', maxHeight: '900px' }}>
                   <img
                     src={item.src}
                     alt={item.caption}
                     loading={idx === 0 ? 'eager' : 'lazy'}
-                    className="w-full h-full object-cover block"
+                    className="w-full h-full object-cover object-center block aspect-[3/4]"
                   />
 
                   {/* Top-right caption overlay: bold white text with strong white glow */}
                   <div
                     aria-hidden
+                    className="absolute bottom-8 left-0 right-0 text-center px-4 sm:px-6 md:px-8"
                     style={{
-                      position: 'absolute',
-                      top: '18px',
-                      right: '18px',
-                      padding: '10px 14px',
-                      borderRadius: '10px',
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.5), transparent)',
+                      padding: '40px 14px 20px',
                       pointerEvents: 'none',
                     }}
                   >
                     <span
                       style={{
-                        // white at 50% opacity per request (no stroke, no shadow)
-                        color: 'rgba(255,255,255,0.5)',
-                        fontWeight: 800,
-                        // target roughly 2/6 of viewport height; clamp for small screens
-                        fontSize: 'clamp(20px, 32vh, 50px)',
+                        color: 'rgba(255,255,255,0.9)',
+                        fontWeight: 600,
+                        fontSize: 'clamp(18px, 5vw, 32px)',
                         display: 'inline-block',
-                        lineHeight: 1,
-                        letterSpacing: '0.2px',
+                        lineHeight: 1.2,
+                        letterSpacing: '0.5px',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.3)',
                       }}
                     >
                       {item.caption}
