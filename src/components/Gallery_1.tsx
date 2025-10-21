@@ -10,7 +10,7 @@ const galleryPhotos_1 = [
   '/optimized/8-w1600.webp',
 ];
 
-export function Gallery() {
+export function Gallery_1() {
   return (
     <section className='gallery-section'>
       <div className='gallery-content'>

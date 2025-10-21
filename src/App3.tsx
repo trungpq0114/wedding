@@ -12,8 +12,11 @@ import {
 import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
 import { Hero } from './components/Hero';
-import { Gallery } from './components/Gallery';
-import { GalleryAlt } from './components/GalleryAlt';
+import { Gallery_1 } from './components/Gallery_1.tsx';
+import { Gallery_2 } from './components/Gallery_2.tsx';
+import { Gallery_3 } from './components/Gallery_3.tsx';
+import { Gallery_4 } from './components/Gallery_4.tsx';
+import { Gallery_5 } from './components/Gallery_5.tsx';
 import { Album } from './components/Album';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
@@ -300,14 +303,17 @@ const App3: React.FC = () => {
       </section>
 
   {/* Section 5 - Our Memories Gallery */}
-  <Gallery />
-
-  {/* Section 5.25 - Alternative Gallery */}
-  <GalleryAlt />
-
-  {/* Section 5.5 - Album Carousel */}
+  <Gallery_1 />
+  {/* Section 5.1 - Album Carousel */}
   <Album />
-
+  {/* Section 5.1 - Alternative Gallery */}
+  <Gallery_2 />
+  {/* Section 5.3 - Alternative Gallery */}
+  <Gallery_3 />
+  {/* Section 5.4 - Alternative Gallery */}
+  <Gallery_4 />
+  {/* Section 5.5 - Alternative Gallery */}
+  <Gallery_5 />
       {/* Section 6 - RSVP */}
       <section className='rsvp-section'>
         <RSVPForm />

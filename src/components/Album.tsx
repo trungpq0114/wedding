@@ -20,7 +20,7 @@ export function Album() {
           <h2 className='event-description'>Join Us as We Begin Our Forever</h2>
         </div>
 
-        <div className='h-[480px]'>
+        <div className='h-[600px]'>
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
             spaceBetween={30}

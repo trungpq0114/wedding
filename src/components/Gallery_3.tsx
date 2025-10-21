@@ -5,23 +5,31 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-creative';
 
-const galleryPhotos_2 = [
-  { src: '/optimized/12-w1600.webp', caption: 'A toast to us' },
-  { src: '/optimized/13-w1600.webp', caption: 'This is our love story' },
-  { src: '/optimized/3-w1600.webp', caption: 'Our first hello' },
-  { src: '/optimized/6-w1600.webp', caption: 'Laughter and vows' },
-  { src: '/optimized/7-w1600.webp', caption: 'Quiet stolen moments' },
-  { src: '/optimized/8-w1600.webp', caption: 'Sunset we remember' },
-  { src: '/optimized/9-w1600.webp', caption: 'Hands held tight' },
-  { src: '/optimized/10-w1600.webp', caption: 'A walk together' },
+const galleryPhotos_3 = [
+  { src: '/optimized/14-w1600.webp', caption: 'Our journey begins' },
+  { src: '/optimized/15-w1600.webp', caption: 'Forever starts here' },
+  { src: '/optimized/16-w1600.webp', caption: 'Sweet memories' },
+  { src: '/optimized/17-w1600.webp', caption: 'Love and laughter' },
+  { src: '/optimized/18-w1600.webp', caption: 'Together forever' },
+  { src: '/optimized/19-w1600.webp', caption: 'Perfect moments' },
+  { src: '/optimized/20-w1600.webp', caption: 'Love story' },
+  { src: '/optimized/21-w1600.webp', caption: 'Two hearts, one love' },
+  { src: '/optimized/22-w1600.webp', caption: 'Love and laughter' },
+  { src: '/optimized/23-w1600.webp', caption: 'Together forever' },
+  { src: '/optimized/24-w1600.webp', caption: 'Perfect moments' },
+  { src: '/optimized/25-w1600.webp', caption: 'Love story' },
 ];
 
 // Usage: import { GalleryAlt } from './components/GalleryAlt';
 // Then include <GalleryAlt /> in your page or App component.
-export function GalleryAlt() {
+export function Gallery_3() {
   return (
     <section className="gallery-alt-section">
       <div className="gallery-alt-content">
+        <div className='section-title text-center'>
+          <h6 className='event-title uppercase'>Celebrate Our Love</h6>
+          <h2 className='event-description'>Join Us as We Begin Our Forever</h2>
+        </div>
     
   <div className="gallery-alt-wrapper" style={{ height: '140vh' }}>
           <Swiper
@@ -52,7 +60,7 @@ export function GalleryAlt() {
             autoplay={{ delay: 2500, disableOnInteraction: false }}
             className="gallery-alt-swiper"
           >
-            {galleryPhotos_2.map((item, idx) => (
+            {galleryPhotos_3.map((item, idx) => (
               <SwiperSlide key={idx} style={{ width: '100%' }}>
                 <div className="slide-card w-full overflow-hidden relative" style={{ height: '140vh' }}>
                   <img
