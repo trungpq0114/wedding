@@ -9,9 +9,8 @@ interface RSVPFormProps {
 const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     attendance: '',
-    guestCount: '',
+    guestName: '',
     message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,9 +50,8 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
       // Reset form
       setFormData({
         name: '',
-        email: '',
         attendance: '',
-        guestCount: '',
+        guestName: '',
         message: '',
       });
 
@@ -126,7 +124,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
           <select
             className='form-select'
             name='guestName'
-            value={formData.guestCount}
+            value={formData.guestName}
             onChange={handleInputChange}
             required
           >
