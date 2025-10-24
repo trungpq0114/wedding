@@ -44,13 +44,13 @@ export const familyInfo = {
     title: 'nhà trai',
     father: 'Ông. Phạm Ngọc Bình',
     mother: 'Bà. Đặng Thị Tâm',
-    location: 'Phường Sông Công',
+    location: '',
   },
   brideFamily: {
     title: 'nhà gái',
     father: 'Ông. Đỗ Viết Mười',
     mother: 'Bà. Vũ Thị Thanh Huyền',
-    location: 'Phường Sông Công',
+    location: '',
   },
 };
 

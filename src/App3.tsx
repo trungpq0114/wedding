@@ -17,6 +17,7 @@ import { Gallery_2 } from './components/Gallery_2.tsx';
 import { Gallery_3 } from './components/Gallery_3.tsx';
 import { Gallery_4 } from './components/Gallery_4.tsx';
 import { Gallery_5 } from './components/Gallery_5.tsx';
+import { Gallery_6 } from './components/Gallery_6.tsx';
 import { Album } from './components/Album';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
@@ -305,8 +306,6 @@ const App3: React.FC = () => {
   {/* Section 5 - Our Memories Gallery */}
   <Gallery_1 />
   {/* Section 5.1 - Album Carousel */}
-  <Album />
-  {/* Section 5.1 - Alternative Gallery */}
   <Gallery_2 />
   {/* Section 5.3 - Alternative Gallery */}
   <Gallery_3 />
@@ -314,6 +313,8 @@ const App3: React.FC = () => {
   <Gallery_4 />
   {/* Section 5.5 - Alternative Gallery */}
   <Gallery_5 />
+  {/* Section 5.6 - Alternative Gallery */}
+  <Gallery_6 />
       {/* Section 6 - RSVP */}
       <section className='rsvp-section'>
         <RSVPForm />

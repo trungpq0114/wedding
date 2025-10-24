@@ -29,7 +29,7 @@ export function Gallery_4() {
             hearts becoming one.
         </p>
 
-        <div className='h-[300px] sm:h-[400px] md:h-[480px]'>
+        <div className='h-[350px] sm:h-[400px] md:h-[480px]'>
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
             spaceBetween={15}
