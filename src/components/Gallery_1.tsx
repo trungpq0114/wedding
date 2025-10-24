@@ -8,6 +8,11 @@ const galleryPhotos_1 = [
   '/optimized/6-w1600.webp',
   '/optimized/7-w1600.webp',
   '/optimized/8-w1600.webp',
+  '/optimized/12-w1600.webp',
+  '/optimized/13-w1600.webp',
+  '/optimized/9-w1600.webp',
+  '/optimized/10-w1600.webp',
+  '/optimized/11-w1600.webp',
 ];
 
 export function Gallery_1() {

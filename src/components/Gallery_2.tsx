@@ -2,11 +2,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 
 const galleryPhotos_2 = [
-  '/optimized/12-w1600.webp',
-  '/optimized/13-w1600.webp',
-  '/optimized/9-w1600.webp',
-  '/optimized/10-w1600.webp',
-  '/optimized/11-w1600.webp',
+  '/optimized/58-w1600.webp',
+  '/optimized/59-w1600.webp',
+  '/optimized/60-w1600.webp',
+  '/optimized/61-w1600.webp',
+  '/optimized/62-w1600.webp',
+  '/optimized/63-w1600.webp',
 ];
 
 export function Gallery_2() {
