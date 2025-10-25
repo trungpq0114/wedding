@@ -12,20 +12,11 @@ export function Gallery_5() {
   return (
     <section className='gallery-section'>
       <div className='gallery-content'>
-        <h2 className='gallery-title'>Our Memories</h2>
-        <p className='gallery-description'>
-          This album captures the most beautiful moments of our special
-          day—filled with love, joy, and unforgettable memories. From our
-          heartfelt vows to the first dance, every photo tells a story of our
-          journey together. Surrounded by family and friends, we celebrated a
-          love that will last a lifetime.
-        </p>
-
         <div className='h-[480px]'>
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
             spaceBetween={30}
-            slidesPerView={1.2}
+            slidesPerView={1}
             loop={true}
             autoplay={{
               delay: 2000,
@@ -47,6 +38,5 @@ export function Gallery_5() {
         </div>
       </div>
     </section>
-    
   );
 }

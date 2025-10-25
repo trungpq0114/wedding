@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { motion } from 'framer-motion';
 
 interface RSVPFormProps {
   onSubmitSuccess?: () => void;
@@ -68,24 +69,53 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
   };
 
   return (
-    <div className='rsvp-content'>
-      <h2 className='rsvp-title'>
+    <motion.div
+      className='rsvp-content'
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+      viewport={{ once: true, amount: 0.2 }}
+      style={{ overflow: 'hidden' }}
+    >
+      <motion.h2
+        className='rsvp-title'
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         Hãy xác nhận sự có mặt của bạn để chúng mình chuẩn bị đón tiếp một cách
         chu đáo nhất. Trân trọng!
-      </h2>
+      </motion.h2>
 
       {submitMessage && (
-        <div
+        <motion.div
           className={`submit-message ${
             submitMessage.includes('Cảm ơn') ? 'success' : 'error'
           }`}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
         >
           {submitMessage}
-        </div>
+        </motion.div>
       )}
 
-      <form className='rsvp-form' onSubmit={handleSubmit}>
-        <div className='form-group'>
+      <motion.form
+        className='rsvp-form'
+        onSubmit={handleSubmit}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
+        <motion.div
+          className='form-group'
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <input
             type='text'
             name='name'
@@ -95,9 +125,15 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
             onChange={handleInputChange}
             required
           />
-        </div>
+        </motion.div>
 
-        <div className='form-group'>
+        <motion.div
+          className='form-group'
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.8, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <textarea
             name='message'
             placeholder='Gửi lời chúc đến cô dâu chú rể'
@@ -105,9 +141,15 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
             value={formData.message}
             onChange={handleInputChange}
           ></textarea>
-        </div>
+        </motion.div>
 
-        <div className='form-group'>
+        <motion.div
+          className='form-group'
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.0, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <select
             className='form-select'
             name='attendance'
@@ -119,8 +161,15 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
             <option value='yes'>Có, tôi sẽ tham dự</option>
             <option value='no'>Rất tiếc, tôi không thể tham dự</option>
           </select>
-        </div>
-        <div className='form-group'>
+        </motion.div>
+
+        <motion.div
+          className='form-group'
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 1.2, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <select
             className='form-select'
             name='guestName'
@@ -132,13 +181,23 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
             <option value='1'>Cô dâu</option>
             <option value='2'>Chú rể</option>
           </select>
-        </div>
+        </motion.div>
 
-        <button type='submit' className='submit-btn' disabled={isSubmitting}>
+        <motion.button
+          type='submit'
+          className='submit-btn'
+          disabled={isSubmitting}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.4, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
           {isSubmitting ? 'Đang gửi...' : 'GỬI LỜI NHẮN'}
-        </button>
-      </form>
-    </div>
+        </motion.button>
+      </motion.form>
+    </motion.div>
   );
 };
 

@@ -18,7 +18,12 @@ import { Gallery_3 } from './components/Gallery_3.tsx';
 import { Gallery_4 } from './components/Gallery_4.tsx';
 import { Gallery_5 } from './components/Gallery_5.tsx';
 // import { Gallery_6 } from './components/Gallery_6.tsx';
-import { Album } from './components/Album';
+import { Audio } from './components/Audio';
+import { Title } from './components/Title.tsx';
+import { Rotate } from './components/Rotate.tsx';
+import { motion } from 'framer-motion';
+import { GsapImage } from './components/GsapImage.tsx';
+import { Timeline } from './components/Timeline.tsx';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -49,25 +54,111 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   }, [targetDate]);
 
   return (
-    <div className='countdown-display'>
+    <motion.div
+      className='countdown-display'
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ type: 'spring', duration: 1, bounce: 0.3 }}
+      viewport={{ once: true, amount: 0.5 }}
+    >
       <span className='countdown-number'>
-        <span className='min-w-[62px] inline-flex items-center justify-center'>
+        <motion.span
+          className='min-w-[62px] inline-flex items-center justify-center'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: 'spring',
+            duration: 0.8,
+            delay: 0.2,
+            bounce: 0.4,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {String(timeLeft.days).padStart(2, '0')}
-        </span>
-        :
-        <span className='min-w-[62px] inline-flex items-center justify-center'>
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            duration: 0.6,
+            delay: 0.4,
+            bounce: 0.5,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          :
+        </motion.span>
+        <motion.span
+          className='min-w-[62px] inline-flex items-center justify-center'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: 'spring',
+            duration: 0.8,
+            delay: 0.6,
+            bounce: 0.4,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {String(timeLeft.hours).padStart(2, '0')}
-        </span>
-        :
-        <span className='min-w-[62px] inline-flex items-center justify-center'>
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            duration: 0.6,
+            delay: 0.8,
+            bounce: 0.5,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          :
+        </motion.span>
+        <motion.span
+          className='min-w-[62px] inline-flex items-center justify-center'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: 'spring',
+            duration: 0.8,
+            delay: 1.0,
+            bounce: 0.4,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {String(timeLeft.minutes).padStart(2, '0')}
-        </span>
-        :
-        <span className='min-w-[62px] inline-flex items-center justify-center'>
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: 'spring',
+            duration: 0.6,
+            delay: 1.2,
+            bounce: 0.5,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          :
+        </motion.span>
+        <motion.span
+          className='min-w-[62px] inline-flex items-center justify-center'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            type: 'spring',
+            duration: 0.8,
+            delay: 1.4,
+            bounce: 0.4,
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
           {String(timeLeft.seconds).padStart(2, '0')}
-        </span>
+        </motion.span>
       </span>
-    </div>
+    </motion.div>
   );
 };
 
@@ -78,17 +169,11 @@ const App3: React.FC = () => {
     <div className='app3-container'>
       {/* Section 1 - Hero Background */}
       <section className='hero-section relative'>
+        <Audio />
+
         <Hero />
 
-        <div className='absolute bottom-0 left-0 right-0 z-10'>
-          <h1 className='hero-title'>Trung</h1>
-
-          <div className='flex items-center justify-center'>
-            <p className='hero-ampersand'>&</p>
-
-            <h1 className='hero-title'>Thảo</h1>
-          </div>
-        </div>
+        <Title />
       </section>
 
       {/* Section 2 - Main Wedding Info */}
@@ -116,14 +201,7 @@ const App3: React.FC = () => {
           <p className='wedding-date'>{weddingInfo.date}</p>
         </div>
 
-        <div className='absolute bottom-13 left-0 right-0 flex items-center justify-center'>
-          <img
-            src='/optimized/68-w1600.webp'
-            alt=''
-            className='w-[291px]'
-            loading='lazy'
-          />
-        </div>
+        <Rotate />
       </section>
 
       {/* Calendar */}
@@ -175,31 +253,55 @@ const App3: React.FC = () => {
       {/* Section 3 - Wedding Details & Calendar */}
       <section className='details-section'>
         <div className='details-content'>
-          <h2 className='title'>
-            Thân mời tới dự lễ cưới thân mật của chúng tôi
-          </h2>
+          <div>
+            <motion.h2
+              initial={{ opacity: 0, y: 40 }}
+              transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+              className='title'
+            >
+              Thân mời tới dự lễ cưới thân mật của chúng tôi
+            </motion.h2>
 
-          <div className='relative flex flex-col gap-5 items-center justify-center'>
-            <p className='couple-wedding'>Quang Trung</p>
-            <p className='ladi-headline absolute'>&</p>
-            <p className='couple-wedding'>Phương Thảo</p>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 1,
+              }}
+              className='relative flex flex-col gap-5 items-center justify-center'
+            >
+              <p className='couple-wedding'>Quang Trung</p>
+              <p className='ladi-headline absolute'>&</p>
+              <p className='couple-wedding'>Phương Thảo</p>
+            </motion.div>
           </div>
 
-          <div className='w-full h-[302px] flex items-center gap-4'>
-            <div>
-              <img src='/wedding/76.webp' alt='image' loading='lazy' />
-            </div>
-
-            <div>
-              <img src='/wedding/75.webp' alt='image' loading='lazy' />
-            </div>
-          </div>
+          <GsapImage />
 
           {/* Wedding location and info */}
           <div className='wedding-info'>
             {/* Family info */}
             <div className='family-info'>
-              <div className='family-side'>
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                transition={{
+                  type: 'spring', // ← Dùng spring thay vì ease
+                  duration: 1,
+                }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                }}
+                className='family-side'
+              >
                 <h4>{familyInfo.groomFamily.title}</h4>
                 <p>
                   {familyInfo.groomFamily.father}
@@ -208,9 +310,21 @@ const App3: React.FC = () => {
                   <br />
                   {familyInfo.groomFamily.location}
                 </p>
-              </div>
+              </motion.div>
               <div className='w-[2px] h-full bg-[#760507]'></div>
-              <div className='family-side'>
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                transition={{
+                  type: 'spring', // ← Dùng spring thay vì ease
+                  duration: 1,
+                }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{
+                  once: true,
+                  amount: 0.3,
+                }}
+                className='family-side'
+              >
                 <h4>{familyInfo.brideFamily.title}</h4>
                 <p>
                   {familyInfo.brideFamily.father}
@@ -219,20 +333,38 @@ const App3: React.FC = () => {
                   <br />
                   {familyInfo.brideFamily.location}
                 </p>
-              </div>
+              </motion.div>
             </div>
 
             <div className='flex ietems-center justify-center !mb-5'>
               <img src='/one.png' alt='png' className='w-[106.5px]' />
             </div>
 
-            <p className='ceremony-time'>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+              className='ceremony-time'
+            >
               tiệc nhà gái được tổ chức
               <br />
               vào lúc 9 giờ 00 phút
-            </p>
+            </motion.p>
 
-            <div className='date-info'>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+              className='date-info'
+            >
               <span className='day-name'>{weddingInfo.dayName}</span>
 
               <div className='date-details'>
@@ -250,14 +382,25 @@ const App3: React.FC = () => {
               </div>
 
               <p className='lunar-date'>{weddingInfo.lunarDate}</p>
-            </div>
+            </motion.div>
 
             <div className='flex items-center justify-center !mb-10'>
-              <img src='/ss.png' alt='' className='w-[65px]' />
+              <img src='/ss.png' alt='ss' className='w-[65px]' />
             </div>
 
-            <h3 className='location-title'>{weddingInfo.location}</h3>
-            <p className='location-address'>Địa chỉ: {weddingInfo.address}</p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              transition={{ duration: 1, ease: 'easeOut' }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{
+                once: true,
+                amount: 0.5,
+              }}
+              className='wedding-location'
+            >
+              <h3 className='location-title'>{weddingInfo.location}</h3>
+              <p className='location-address'>Địa chỉ: {weddingInfo.address}</p>
+            </motion.div>
 
             <a
               target='_blank'
@@ -278,44 +421,33 @@ const App3: React.FC = () => {
           className='timeline-bg'
         />
 
-        <h2 className='timeline-title absolute bottom-0 left-1/2 transform -translate-x-1/2'>
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+          className='timeline-title absolute bottom-0 left-1/2 transform -translate-x-1/2'
+        >
           Timeline
-        </h2>
+        </motion.h2>
       </section>
 
       {/* Section 4 - Timeline */}
-      <section className='timeline-section !py-10 !px-5'>
-        <div className='timeline-content'>
-          <div className='timeline-events'>
-            {timelineEvents.map((event, index) => (
-              <div key={index} className='timeline-event'>
-                <div className='event-icon'>
-                  <img src={event.icon} alt='Event icon' />
-                </div>
-                <div className='event-time min-w-[76px]'>{event.time}</div>
-                <div className='event-content'>
-                  <h4 className='event-title'>{event.title}</h4>
-                  <p className='event-description'>{event.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Timeline />
 
-  {/* Section 5 - Our Memories Gallery */}
-  <Gallery_1 />
-  {/* Section 5.1 - Album Carousel */}
-  <Gallery_2 />
-  {/* Section 5.3 - Alternative Gallery */}
-  <Gallery_3 />
-  {/* Section 5.4 - Alternative Gallery */}
-  <Gallery_4 />
-  {/* Section 5.5 - Alternative Gallery */}
-  <Gallery_5 />
-  {/* Section 5.6 - Alternative Gallery */}
-  {/* <Gallery_6 /> */}
-      {/* Section 6 - RSVP */}
+      <Gallery_1 />
+
+      <Gallery_2 />
+
+      <Gallery_3 />
+
+      <Gallery_4 />
+
+      <Gallery_5 />
+
       <section className='rsvp-section'>
         <RSVPForm />
 
@@ -325,18 +457,44 @@ const App3: React.FC = () => {
       </section>
 
       <section>
-        <p className='countdown-label'>Countdown</p>
+        <motion.p
+          className='countdown-label'
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.5 }}
+        >
+          Countdown
+        </motion.p>
         <CountdownTimer targetDate={weddingDate} />
       </section>
 
       <section className='image-container flex flex-col items-center justify-between'>
-        <p className='loichuc !px-5 !pt-5'>
+        <motion.p
+          className='loichuc !px-5 !pt-5'
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
           Cảm ơn bạn đã dành tình cảm cho chúng mình! Sự hiện diện của bạn chính
           là món quà ý nghĩa nhất, và chúng mình vô cùng trân quý khi được cùng
           bạn chia sẻ niềm hạnh phúc trong ngày trọng đại này.
-        </p>
+        </motion.p>
 
-        <p className='thank-you !mb-5'>Thank you!</p>
+        <motion.p
+          className='thank-you !mb-5'
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+            ease: [0.34, 1.56, 0.64, 1],
+          }}
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          Thank you!
+        </motion.p>
       </section>
 
       {/* Mung Cuoi Modal */}
