@@ -278,7 +278,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 @media (min-width: 768px) {
@@ -1680,44 +1680,179 @@ html {
   background-attachment: scroll;
 }
 
-/* Audio Control Button */
-.audio-control-btn {
+/* Preload Styles */
+.preload-container {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* background: linear-gradient(135deg, #760507 0%, #8B4513 100%); */
+  background: #760507;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.preload-content {
+  text-align: center;
+  color: white;
+  max-width: 400px;
+  padding: 40px 20px;
+}
+
+.preload-logo {
+  margin-bottom: 50px;
+}
+
+.preload-title {
+  font-family: 'UVNHoaTay', cursive;
+  font-size: 36px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.preload-subtitle {
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.9;
+}
+
+.preload-progress {
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.progress-percentage {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.progress-count {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.enter-btn {
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  color: #760507;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
   transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-@media (min-width: 768px) {
-  .audio-control-btn {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-    top: 30px;
-    right: 30px;
+.enter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.error-section {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.error-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffcccc;
+}
+
+.error-message {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.retry-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-btn:hover {
+  background: #ff5252;
+  transform: translateY(-1px);
+}
+
+.preload-footer {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 30px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .preload-content {
+    padding: 20px;
   }
-}
 
-.audio-control-btn:hover {
-  background: rgba(0, 0, 0, 0.9);
-  transform: scale(1.1);
-}
+  .preload-title {
+    font-size: 28px;
+  }
 
-.audio-control-btn:active {
-  transform: scale(0.95);
+  .preload-subtitle {
+    font-size: 16px;
+  }
+
+  .progress-percentage {
+    font-size: 20px;
+  }
+
+  .enter-btn {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
 }
 
 .music {

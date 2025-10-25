@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App3.css';
 import './styles/carousel.css';
 
-import {
-  weddingDate,
-  timelineEvents,
-  weddingInfo,
-  familyInfo,
-  imageUrls,
-} from './constants';
+import { weddingDate, weddingInfo, familyInfo, imageUrls } from './constants';
 import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
 import { Hero } from './components/Hero';
@@ -24,6 +18,8 @@ import { Rotate } from './components/Rotate.tsx';
 import { motion } from 'framer-motion';
 import { GsapImage } from './components/GsapImage.tsx';
 import { Timeline } from './components/Timeline.tsx';
+import { WeddingToast } from './components/Toast.tsx';
+import { Preload } from './components/Preload';
 
 const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
@@ -164,9 +160,21 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
 
 const App3: React.FC = () => {
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
+  const [isPreloadComplete, setIsPreloadComplete] = useState(false);
+
+  const handlePreloadComplete = () => {
+    setIsPreloadComplete(true);
+  };
+
+  if (!isPreloadComplete) {
+    return <Preload onComplete={handlePreloadComplete} />;
+  }
 
   return (
     <div className='app3-container'>
+      {/* <RSVPList /> */}
+      <WeddingToast />
+
       {/* Section 1 - Hero Background */}
       <section className='hero-section relative'>
         <Audio />
@@ -438,15 +446,15 @@ const App3: React.FC = () => {
       {/* Section 4 - Timeline */}
       <Timeline />
 
-  <Gallery_1 />
+      <Gallery_1 />
 
-  <Gallery_2 />
+      <Gallery_2 />
 
-  <Gallery_3 />
+      <Gallery_3 />
 
-  <Gallery_4 />
+      <Gallery_4 />
 
-  <Gallery_5 />
+      <Gallery_5 />
 
       <section className='rsvp-section'>
         <RSVPForm />
