@@ -302,13 +302,13 @@ const App3: React.FC = () => {
                 }}
                 className='family-side'
               >
-                <h4>{familyInfo.groomFamily.title}</h4>
+                <h4>{familyInfo.brideFamily.title}</h4>
                 <p>
-                  {familyInfo.groomFamily.father}
+                  {familyInfo.brideFamily.father}
                   <br />
-                  {familyInfo.groomFamily.mother}
+                  {familyInfo.brideFamily.mother}
                   <br />
-                  {familyInfo.groomFamily.location}
+                  {familyInfo.brideFamily.location}
                 </p>
               </motion.div>
               <div className='w-[2px] h-full bg-[#760507]'></div>
@@ -325,13 +325,13 @@ const App3: React.FC = () => {
                 }}
                 className='family-side'
               >
-                <h4>{familyInfo.brideFamily.title}</h4>
+                <h4>{familyInfo.groomFamily.title}</h4>
                 <p>
-                  {familyInfo.brideFamily.father}
+                  {familyInfo.groomFamily.father}
                   <br />
-                  {familyInfo.brideFamily.mother}
+                  {familyInfo.groomFamily.mother}
                   <br />
-                  {familyInfo.brideFamily.location}
+                  {familyInfo.groomFamily.location}
                 </p>
               </motion.div>
             </div>
@@ -438,15 +438,15 @@ const App3: React.FC = () => {
       {/* Section 4 - Timeline */}
       <Timeline />
 
-      <Gallery_1 />
+  <Gallery_1 />
 
-      <Gallery_2 />
+  <Gallery_2 />
 
-      <Gallery_3 />
+  <Gallery_3 />
 
-      <Gallery_4 />
+  <Gallery_4 />
 
-      <Gallery_5 />
+  <Gallery_5 />
 
       <section className='rsvp-section'>
         <RSVPForm />

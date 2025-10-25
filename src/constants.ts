@@ -56,9 +56,9 @@ export const familyInfo = {
 
 // Image URLs
 export const imageUrls = {
-  hero: '/optimized/4-w1600.webp',
-  hero1: '/optimized/35-w1600.webp',
-  hero2: '/optimized/67-w1600.webp',
+  hero: '/optimized/3-w1600.webp',
+  hero1: '/optimized/31-w1600.webp',
+  hero2: '/optimized/63-w1600.webp',
 
   backgroundTexture:
     'https://w.ladicdn.com/s750x950/6322a62f2dad980013bb5005/icon-thiep-huyenpsd_0000_clear-white-plaster-texture-pattern-copy-14-20250703084107-2wpug.png',

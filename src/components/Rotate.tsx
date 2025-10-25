@@ -24,7 +24,7 @@ export function Rotate() {
         }
       >
         <img
-          src='/optimized/68-w1600.webp'
+          src='/optimized/29-w1600.webp'
           alt='image'
           className='w-[291px]'
           loading='lazy'

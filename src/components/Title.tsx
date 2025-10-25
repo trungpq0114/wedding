@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 export function Title() {
   return (
-    <div className='absolute bottom-0 left-0 right-0 z-10'>
+    <div className='absolute bottom-30 left-0 right-0 z-10'>
       <motion.h1
         className='hero-title'
         initial={{ opacity: 0, y: 50 }}
@@ -13,7 +13,7 @@ export function Title() {
           ease: 'easeInOut',
         }}
       >
-        Trung
+        Quang Trung
       </motion.h1>
 
       <div className='flex items-center justify-center'>
@@ -40,7 +40,7 @@ export function Title() {
             ease: 'easeInOut',
           }}
         >
-          Thảo
+          Phương Thảo
         </motion.h1>
       </div>
     </div>
