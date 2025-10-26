@@ -1,10 +1,19 @@
 const galleryPhotos_2 = [
+  '/optimized/57-w1600.webp',
   '/optimized/58-w1600.webp',
   '/optimized/59-w1600.webp',
   '/optimized/60-w1600.webp',
   '/optimized/61-w1600.webp',
   '/optimized/62-w1600.webp',
   '/optimized/63-w1600.webp',
+  '/optimized/64-w1600.webp',
+  '/optimized/65-w1600.webp',
+  '/optimized/66-w1600.webp',
+  '/optimized/67-w1600.webp',
+  '/optimized/68-w1600.webp',
+  '/optimized/69-w1600.webp',
+  '/optimized/70-w1600.webp',
+  '/optimized/71-w1600.webp',
 ];
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
