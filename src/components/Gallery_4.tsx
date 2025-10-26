@@ -49,7 +49,7 @@ export function Gallery_4() {
         >
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
-            spaceBetween={30}
+            spaceBetween={5}
             slidesPerView={1.2}
             loop={true}
             autoplay={{

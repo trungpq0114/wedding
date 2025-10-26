@@ -52,11 +52,11 @@ export function Gallery_1() {
         >
           <Swiper
             modules={[Autoplay, Pagination, EffectFade]}
-            spaceBetween={30}
+            spaceBetween={5}
             slidesPerView={1.2}
             loop={true}
             autoplay={{
-              delay: 2000,
+              delay: 3000,
               disableOnInteraction: false,
             }}
             className='hero-swiper'
