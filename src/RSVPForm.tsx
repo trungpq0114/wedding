@@ -4,7 +4,6 @@ import { db } from './firebase';
 
 interface FormData {
   name: string;
-  email: string;
   attendance: string;
   guestCount: string;
   message: string;
@@ -13,7 +12,6 @@ interface FormData {
 const RSVPForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    email: '',
     attendance: '',
     guestCount: '',
     message: '',

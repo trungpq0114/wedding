@@ -41,6 +41,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
       await addDoc(collection(db, 'rsvp'), {
         ...formData,
         timestamp: new Date(),
+        active: 1,
         createdAt: new Date().toISOString(),
       });
 
