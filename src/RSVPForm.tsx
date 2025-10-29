@@ -42,6 +42,7 @@ const RSVPForm: React.FC = () => {
     try {
       await addDoc(collection(db, 'rsvp'), {
         ...formData,
+        active: 1,
         timestamp: new Date(),
       });
 

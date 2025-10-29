@@ -17,6 +17,7 @@ interface RSVPData {
   message: string;
   timestamp: Timestamp | Date;
   createdAt?: string;
+  active?: number;
 }
 
 const RSVPList: React.FC = () => {
@@ -37,10 +38,14 @@ const RSVPList: React.FC = () => {
 
       const rsvpData: RSVPData[] = [];
       querySnapshot.forEach((doc) => {
-        rsvpData.push({
-          id: doc.id,
-          ...doc.data(),
-        } as RSVPData);
+        const data = doc.data() as RSVPData;
+        // Chỉ thêm vào danh sách nếu active !== 0
+        if (data.active !== 0) {
+          rsvpData.push({
+            ...data,
+            id: doc.id,
+          });
+        }
       });
 
       setRsvpList(rsvpData);
