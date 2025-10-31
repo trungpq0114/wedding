@@ -15,6 +15,7 @@ interface RSVPData {
   guestName: string;
   attendance: string;
   message: string;
+  active?: number;
 }
 
 export function WeddingToast() {
@@ -22,7 +23,7 @@ export function WeddingToast() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [isClosed, setIsClosed] = useState(false); // ✅ trạng thái đã đóng
+  const [isClosed, setIsClosed] = useState(false);
 
   useEffect(() => {
     fetchRSVPData();
@@ -36,10 +37,13 @@ export function WeddingToast() {
 
       const rsvpData: RSVPData[] = [];
       querySnapshot.forEach((doc) => {
-        rsvpData.push({
-          id: doc.id,
-          ...doc.data(),
-        } as RSVPData);
+        const data = doc.data() as RSVPData;
+        if (data.active !== 0) {
+          rsvpData.push({
+            ...data,
+            id: doc.id,
+          });
+        }
       });
 
       setRsvpList(rsvpData);
@@ -50,7 +54,6 @@ export function WeddingToast() {
     }
   };
 
-  // ❌ Khi nhấn X => đóng toast và ngừng hiển thị
   const handleClose = () => {
     setIsVisible(false);
     setTimeout(() => {
@@ -74,12 +77,12 @@ export function WeddingToast() {
     return () => clearInterval(timer);
   }, [rsvpList, currentIndex, isClosed]);
 
-  if (loading || rsvpList.length === 0 || isClosed) return null; // ✅ Không render nếu đã đóng
+  if (loading || rsvpList.length === 0 || isClosed) return null;
 
   const currentRsvp = rsvpList[currentIndex];
 
   return (
-    <div className='fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-2xl px-4'>
+    <div className='fixed top-2 sm:top-4 left-0 right-0 sm:left-1/2 sm:-translate-x-1/2 z-50 px-3 sm:px-4 sm:w-full sm:max-w-2xl'>
       <div
         className={`transform transition-all duration-300 ${
           isVisible
@@ -87,21 +90,30 @@ export function WeddingToast() {
             : '-translate-y-full opacity-0'
         }`}
       >
-        <div className='bg-white rounded-2xl shadow-2xl border-2 border-rose-200 overflow-hidden'>
+        <div
+          className='bg-white rounded-xl sm:rounded-2xl shadow-2xl border overflow-hidden'
+          style={{ borderColor: 'rgba(118, 5, 7, 0.3)' }}
+        >
           {/* Header */}
-          <div className='bg-gradient-to-r from-rose-400 to-pink-500 px-6 py-3 flex items-center justify-between'>
-            <div className='flex items-center gap-2'>
-              <Heart className='w-5 h-5 text-white fill-white animate-pulse' />
-              <span className='text-white font-semibold'>
+          <div
+            className='px-3 py-2 sm:px-6 sm:py-3 flex items-center justify-between'
+            style={{
+              background:
+                'linear-gradient(to right, #760507, #a01618, #760507)',
+            }}
+          >
+            <div className='flex items-center gap-1.5 sm:gap-2'>
+              <Heart className='w-4 h-4 sm:w-5 sm:h-5 text-white fill-white animate-pulse' />
+              <span className='text-white font-semibold text-xs sm:text-base'>
                 {currentRsvp.attendance === 'yes'
                   ? '💕 Lời chúc mới!'
                   : '💌 Thông báo mới!'}
               </span>
             </div>
 
-            <div className='flex items-center gap-3 text-white text-sm'>
+            <div className='flex items-center gap-2 sm:gap-3 text-white text-xs sm:text-sm'>
               <div className='flex items-center gap-1'>
-                <Users className='w-4 h-4' />
+                <Users className='w-3 h-3 sm:w-4 sm:h-4' />
                 <span>
                   {currentIndex + 1}/{rsvpList.length}
                 </span>
@@ -110,38 +122,44 @@ export function WeddingToast() {
               {/* Nút đóng */}
               <button
                 onClick={handleClose}
-                className='hover:bg-rose-500/30 p-1 rounded-full transition'
+                className='hover:bg-white/30 active:bg-white/40 p-1 rounded-full transition'
                 aria-label='Đóng thông báo'
               >
-                <X className='w-5 h-5 text-white' />
+                <X className='w-4 h-4 sm:w-5 sm:h-5 text-white' />
               </button>
             </div>
           </div>
 
           {/* Content */}
-          <div className='p-6'>
-            <div className='flex items-start gap-4 mb-4'>
-              <div className='w-14 h-14 bg-gradient-to-br from-rose-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0'>
-                <span className='text-white font-bold text-xl'>
+          <div className='p-3 sm:p-6'>
+            <div className='flex items-start gap-2.5 sm:gap-4 mb-3 sm:mb-4'>
+              <div
+                className='w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center flex-shrink-0'
+                style={{
+                  background:
+                    'linear-gradient(to bottom right, #760507, #a01618)',
+                }}
+              >
+                <span className='text-white font-bold text-base sm:text-xl'>
                   {currentRsvp.name.charAt(0).toUpperCase()}
                 </span>
               </div>
               <div className='flex-1 min-w-0'>
-                <h4 className='font-bold text-gray-800 text-xl mb-1'>
+                <h4 className='font-bold text-gray-800 text-base sm:text-xl mb-0.5 sm:mb-1 truncate'>
                   {currentRsvp.name}
                 </h4>
                 {currentRsvp.guestName && (
-                  <p className='text-sm text-gray-600 mb-2'>
+                  <p className='text-xs sm:text-sm text-gray-600 mb-1.5 sm:mb-2 truncate'>
                     Khách mời: {currentRsvp.guestName}
                   </p>
                 )}
                 <div>
                   {currentRsvp.attendance === 'yes' ? (
-                    <span className='inline-flex items-center gap-1 bg-green-100 text-green-700 text-xs font-medium px-3 py-1.5 rounded-full'>
+                    <span className='inline-flex items-center gap-1 bg-green-100 text-green-700 text-[10px] sm:text-xs font-medium px-2 py-1 sm:px-3 sm:py-1.5 rounded-full'>
                       ✓ Sẽ tham dự
                     </span>
                   ) : (
-                    <span className='inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1.5 rounded-full'>
+                    <span className='inline-flex items-center gap-1 bg-gray-100 text-gray-700 text-[10px] sm:text-xs font-medium px-2 py-1 sm:px-3 sm:py-1.5 rounded-full'>
                       ✗ Không thể tham dự
                     </span>
                   )}
@@ -150,8 +168,15 @@ export function WeddingToast() {
             </div>
 
             {currentRsvp.message && (
-              <div className='bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-4 border border-rose-100'>
-                <p className='text-gray-700 text-base italic leading-relaxed'>
+              <div
+                className='rounded-lg sm:rounded-xl p-3 sm:p-4 border'
+                style={{
+                  background:
+                    'linear-gradient(to bottom right, #fff5f5, #fef2f2, #fff7ed)',
+                  borderColor: 'rgba(118, 5, 7, 0.15)',
+                }}
+              >
+                <p className='text-gray-700 text-xs sm:text-base italic leading-relaxed line-clamp-3 sm:line-clamp-none'>
                   "{currentRsvp.message}"
                 </p>
               </div>
@@ -159,10 +184,14 @@ export function WeddingToast() {
           </div>
 
           {/* Progress bar */}
-          <div className='h-1 bg-gray-100'>
+          <div className='h-0.5 sm:h-1 bg-gray-100'>
             <div
-              className='h-full bg-gradient-to-r from-rose-400 to-pink-500 transition-all duration-[5000ms] ease-linear'
-              style={{ width: isVisible ? '100%' : '0%' }}
+              className='h-full transition-all duration-[5000ms] ease-linear'
+              style={{
+                background:
+                  'linear-gradient(to right, #760507, #a01618, #760507)',
+                width: isVisible ? '100%' : '0%',
+              }}
             />
           </div>
         </div>
