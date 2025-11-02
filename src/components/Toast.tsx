@@ -64,18 +64,16 @@ export function WeddingToast() {
   useEffect(() => {
     if (rsvpList.length === 0 || isClosed) return;
 
-    setIsVisible(true); // Hiện toast đầu tiên
+    setIsVisible(true);
 
     const timer = setInterval(() => {
-      // 1️⃣ Ẩn lời chúc hiện tại
       setIsVisible(false);
 
-      // 2️⃣ Đợi 5s sau khi ẩn mới hiển thị lời chúc tiếp theo
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % rsvpList.length);
         setIsVisible(true);
-      }, 5000); // thời gian chờ giữa 2 toast
-    }, 10000); // Tổng chu kỳ = 5s hiện + 5s ẩn = 10s
+      }, 3000);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, [rsvpList, currentIndex, isClosed]);
