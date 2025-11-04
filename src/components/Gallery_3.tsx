@@ -1,7 +1,6 @@
 const galleryPhotos_3 = [
   '/optimized/15-w1600.webp',
   '/optimized/16-w1600.webp',
-  '/optimized/17-w1600.webp',
   '/optimized/18-w1600.webp',
   '/optimized/19-w1600.webp',
   '/optimized/20-w1600.webp',
