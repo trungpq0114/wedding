@@ -39,6 +39,8 @@ export function Gallery_2() {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
+          Nhờ có anh, những ngày tháng bình dị cũng trở nên thật đặc biệt.
+          Từ giờ, mọi khoảnh khắc của em đều muốn có anh chia sẻ.
         </motion.p>
 
         <motion.div

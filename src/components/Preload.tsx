@@ -154,7 +154,7 @@ export function Preload({ onComplete }: PreloadProps) {
         </div>
 
         <div className='preload-footer'>
-          <p>Đang chuẩn bị trải nghiệm tuyệt vời cho bạn...</p>
+          <p>...</p>
         </div>
       </div>
     </div>

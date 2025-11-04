@@ -11,6 +11,11 @@ const galleryPhotos_4 = [
   '/optimized/33-w1600.webp',
   '/optimized/32-w1600.webp',
   '/optimized/31-w1600.webp',
+  '/optimized/26-w1600.webp',
+  '/optimized/27-w1600.webp',
+  '/optimized/28-w1600.webp',
+  '/optimized/29-w1600.webp',
+  '/optimized/30-w1600.webp',
 ];
 
 
