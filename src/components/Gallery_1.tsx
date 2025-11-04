@@ -36,11 +36,11 @@ export function Gallery_1() {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          This album captures the most beautiful moments of our special
-          day—filled with love, joy, and unforgettable memories. From our
-          heartfelt vows to the first dance, every photo tells a story of our
-          journey together. Surrounded by family and friends, we celebrated a
-          love that will last a lifetime.
+          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. 
+          Là cái tựa nhẹ vào vai trong những lúc yếu lòng, 
+          là ánh mắt chỉ dành cho riêng ta dù thế giới ngoài kia rộng lớn. 
+          Tình yêu không cần phải phô trương, chỉ cần chân thành và luôn hướng về nhau, 
+          vậy là đủ để trái tim bình yên.
         </motion.p>
 
         <motion.div

@@ -5,21 +5,21 @@ export const weddingDate = new Date('2025-11-29T16:30:00');
 export const timelineEvents = [
   {
     icon: '/image3.png',
-    time: '8:30',
+    time: '10:00',
     title: 'ĐÓN KHÁCH',
-    description: 'Checkin với photobooth và gửi lời chúc phúc đến CDCR',
+    description: 'Check in và gửi lời chúc phúc đến CDCR',
   },
   {
     icon: '/image1.png',
-    time: '9:00',
-    title: 'LỄ VU QUY',
-    description: 'Cùng nhau chứng kiến khoảnh khắc thiêng liêng cùng CDCR',
+    time: '11:00',
+    title: 'KHAI TIỆC',
+    description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng CDCR',
   },
   {
     icon: '/image2.png',
     time: '9:15',
-    title: 'KHAI TIỆC',
-    description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng CDCR',
+    title: 'CHỤP ẢNH LUU NIỆM',
+    description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
   },
 ];
 
