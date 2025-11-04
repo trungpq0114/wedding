@@ -749,7 +749,7 @@ body {
 
 .gallery-title {
   font-family: 'Sacramento', cursive;
-  font-size: 30px;
+  font-size: 15px;
   line-height: 1.6;
   color: rgb(255, 255, 255);
   text-align: left;
@@ -1649,7 +1649,7 @@ html {
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
   line-height: 1.7;
-  color: rgb(255, 255, 255);
+  color: rgb(54, 54, 54);
   text-align: center;
 }
 

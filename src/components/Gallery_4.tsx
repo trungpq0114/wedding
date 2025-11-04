@@ -34,7 +34,9 @@ export function Gallery_4() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          The Vow Ceremony
+          “Chẳng phải phép màu, vì sao chúng ta gặp được nhau?”
+        Yêu và được yêu là những cảm xúc đẹp đẽ nhất trên đời. 
+        Và nó sẽ càng trở nên quý giá khi mà mình may mắn được gặp gỡ và trao gửi đúng người.
         </motion.h2>
         <motion.p
           className='gallery-description'

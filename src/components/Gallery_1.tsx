@@ -27,7 +27,11 @@ export function Gallery_1() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Our Memories
+          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. 
+          Là cái tựa nhẹ vào vai trong những lúc yếu lòng, 
+          là ánh mắt chỉ dành cho riêng ta dù thế giới ngoài kia rộng lớn. 
+          Tình yêu không cần phải phô trương, chỉ cần chân thành và luôn hướng về nhau, 
+          vậy là đủ để trái tim bình yên.
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -36,11 +40,7 @@ export function Gallery_1() {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. 
-          Là cái tựa nhẹ vào vai trong những lúc yếu lòng, 
-          là ánh mắt chỉ dành cho riêng ta dù thế giới ngoài kia rộng lớn. 
-          Tình yêu không cần phải phô trương, chỉ cần chân thành và luôn hướng về nhau, 
-          vậy là đủ để trái tim bình yên.
+          
         </motion.p>
 
         <motion.div
