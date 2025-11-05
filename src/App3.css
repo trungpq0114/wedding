@@ -899,7 +899,67 @@ body {
   margin-bottom: 24px;
 }
 
-.rsvp-form {}
+.rsvp-form {
+  /* max-width: 600px; */
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.form-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 248, 248, 0.9) 100%);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #760507;
+  border-radius: 20px 20px 0 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.name-group {
+  margin-bottom: 30px;
+}
+
+.name-group .form-input {
+  font-size: 18px;
+  padding: 16px 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.select-group {
+  margin: 0;
+}
+
+.message-group {
+  margin-top: 30px;
+}
+
+.message-group .form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
 
 .form-group {
   border: 1px solid #760507;
@@ -967,6 +1027,7 @@ input:focus-visible {
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
   text-align: center;
+  cursor: pointer;
 
   width: 100%;
   background-color: #760507;
@@ -978,9 +1039,9 @@ input:focus-visible {
   margin-top: 12px;
 }
 
-.submit-btn:hover {
+/* .submit-btn:hover {
   background: #2a4620;
-}
+} */
 
 .submit-btn:disabled {
   background: #ccc;
@@ -1262,7 +1323,7 @@ input:focus-visible {
   }
 
   .rsvp-content {
-    max-width: 500px;
+    /* max-width: 500px; */
     margin: 0 auto;
   }
 }
@@ -1288,9 +1349,10 @@ input:focus-visible {
     padding: 0 60px;
   }
 
+  /* 
   .rsvp-content {
     max-width: 600px;
-  }
+  } */
 }
 
 /* Smooth scrolling */
@@ -1575,6 +1637,24 @@ html {
   .attendance-badge {
     align-self: flex-end;
   }
+
+  .form-card {
+    padding: 30px 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 20px 0;
+  }
+
+  .name-group {
+    margin-bottom: 20px;
+  }
+
+  .message-group {
+    margin-top: 20px;
+  }
 }
 
 /* Admin Panel Styles */
@@ -1651,6 +1731,16 @@ html {
   line-height: 1.7;
   color: rgb(255, 255, 255);
   text-align: center;
+
+}
+
+.image-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(80%);
 }
 
 .image-container {

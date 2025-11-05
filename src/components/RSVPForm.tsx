@@ -41,7 +41,7 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
       await addDoc(collection(db, 'rsvp'), {
         ...formData,
         timestamp: new Date(),
-        active: 1,
+        active: 0,
         createdAt: new Date().toISOString(),
       });
 
@@ -110,93 +110,97 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
         transition={{ duration: 0.6, delay: 0.4, ease: 'easeOut' }}
         viewport={{ once: true, amount: 0.2 }}
       >
-        <motion.div
-          className='form-group'
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <input
-            type='text'
-            name='name'
-            placeholder='Tên của bạn'
-            className='form-input'
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-          />
-        </motion.div>
-
-        <motion.div
-          className='form-group'
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 0.8, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <textarea
-            name='message'
-            placeholder='Gửi lời chúc đến cô dâu chú rể'
-            className='form-textarea'
-            value={formData.message}
-            onChange={handleInputChange}
-          ></textarea>
-        </motion.div>
-
-        <motion.div
-          className='form-group'
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 1.0, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <select
-            className='form-select'
-            name='attendance'
-            value={formData.attendance}
-            onChange={handleInputChange}
-            required
+        <div className='form-card'>
+          <motion.div
+            className='form-group name-group'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <option value=''>Bạn sẽ tham dự chứ?</option>
-            <option value='yes'>Có, tôi sẽ tham dự</option>
-            <option value='no'>Rất tiếc, tôi không thể tham dự</option>
-          </select>
-        </motion.div>
+            <input
+              type='text'
+              name='name'
+              placeholder='Tên của bạn'
+              className='form-input'
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+          </motion.div>
 
-        <motion.div
-          className='form-group'
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5, delay: 1.2, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <select
-            className='form-select'
-            name='guestName'
-            value={formData.guestName}
-            onChange={handleInputChange}
-            required
+          <div className='form-row'>
+            <motion.div
+              className='form-group select-group'
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.8, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <select
+                className='form-select'
+                name='attendance'
+                value={formData.attendance}
+                onChange={handleInputChange}
+                required
+              >
+                <option value=''>Bạn sẽ tham dự chứ?</option>
+                <option value='yes'>Có, tôi sẽ tham dự</option>
+                <option value='no'>Rất tiếc, tôi không thể tham dự</option>
+              </select>
+            </motion.div>
+
+            <motion.div
+              className='form-group select-group'
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 1.0, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+            >
+              <select
+                className='form-select'
+                name='guestName'
+                value={formData.guestName}
+                onChange={handleInputChange}
+                required
+              >
+                <option value=''>Bạn là khách mời của ai</option>
+                <option value='1'>Cô dâu</option>
+                <option value='2'>Chú rể</option>
+              </select>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className='form-group message-group'
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.2, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.2 }}
           >
-            <option value=''>Bạn là khách mời của ai</option>
-            <option value='1'>Cô dâu</option>
-            <option value='2'>Chú rể</option>
-          </select>
-        </motion.div>
+            <textarea
+              name='message'
+              placeholder='Gửi lời chúc đến cô dâu chú rể'
+              className='form-textarea'
+              value={formData.message}
+              onChange={handleInputChange}
+            ></textarea>
+          </motion.div>
 
-        <motion.button
-          type='submit'
-          className='submit-btn'
-          disabled={isSubmitting}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.4, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {isSubmitting ? 'Đang gửi...' : 'GỬI LỜI NHẮN'}
-        </motion.button>
+          <motion.button
+            type='submit'
+            className='submit-btn'
+            disabled={isSubmitting}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.4, ease: 'easeOut' }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {isSubmitting ? 'Đang gửi...' : 'GỬI LỜI NHẮN'}
+          </motion.button>
+        </div>
       </motion.form>
     </motion.div>
   );

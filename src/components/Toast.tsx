@@ -150,7 +150,8 @@ export function WeddingToast() {
                 </h4>
                 {currentRsvp.guestName && (
                   <p className='text-xs sm:text-sm text-gray-600 mb-1.5 sm:mb-2 truncate'>
-                    Khách mời: {currentRsvp.guestName}
+                    Khách mời:{' '}
+                    {currentRsvp.guestName === '1' ? 'Chú rể' : 'Cô dâu'}
                   </p>
                 )}
                 <div>
