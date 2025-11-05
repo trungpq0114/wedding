@@ -423,7 +423,7 @@ const App3: React.FC = () => {
 
       <section className='relative'>
         <img
-          src={'/optimized/27-w1600.webp'}
+          src={'/optimized/60-w1600.webp'}
           alt='Timeline background'
           className='timeline-bg'
         />
