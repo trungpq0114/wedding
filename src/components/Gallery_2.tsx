@@ -29,8 +29,8 @@ export function Gallery_2() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Nhờ có anh, những ngày tháng bình dị cũng trở nên thật đặc biệt.
-          Từ giờ, mọi khoảnh khắc của em đều muốn có anh chia sẻ.
+          Nhờ có em, những ngày tháng bình dị cũng trở nên thật đặc biệt.
+          Từ giờ, mọi khoảnh khắc của anh đều muốn có em chia sẻ.
         </motion.h2>
         <motion.p
           className='gallery-description'

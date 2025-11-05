@@ -12,13 +12,13 @@ export const timelineEvents = [
   {
     icon: '/image1.png',
     time: '11:00',
-    title: 'KHAI TIỆC',
+    title: 'TIỆC MỪNG',
     description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng CDCR',
   },
   {
     icon: '/image2.png',
-    time: '11:30',
-    title: 'CHỤP ẢNH LUU NIỆM',
+    time: '12:30',
+    title: 'CHỤP ẢNH LƯU NIỆM',
     description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
   },
 ];
@@ -28,9 +28,9 @@ export const weddingInfo = {
   groom: 'Trung',
   bride: 'Thảo',
   date: '29.11.2025',
-  location: 'TRUNG TÂM THƯƠNG MẠI VÀ DU LỊCH ĐÔNG TÂN',
+  location: 'TRUNG TÂM THƯƠNG MẠI VÀ DU LỊCH DŨNG TÂN',
   address: 'TDP Khuynh Thạch, phường Sông Công, tỉnh Thái Nguyên',
-  ceremonyTime: 'Được tổ chức vào lúc 16 giờ 30',
+  ceremonyTime: 'Được tổ chức vào lúc 10 giờ 00 phút',
   lunarDate: '(tức ngày 10 tháng 10 năm Ất Tỵ)',
   dayName: 'thứ bảy',
   dayNumber: '29',
