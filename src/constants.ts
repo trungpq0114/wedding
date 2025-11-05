@@ -17,7 +17,7 @@ export const timelineEvents = [
   },
   {
     icon: '/image2.png',
-    time: '9:15',
+    time: '11:30',
     title: 'CHỤP ẢNH LUU NIỆM',
     description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
   },
