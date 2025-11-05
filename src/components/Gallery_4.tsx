@@ -33,9 +33,12 @@ export function Gallery_4() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          “Chẳng phải phép màu, vì sao chúng ta gặp được nhau?”
-        Yêu và được yêu là những cảm xúc đẹp đẽ nhất trên đời. 
-        Và nó sẽ càng trở nên quý giá khi mà mình may mắn được gặp gỡ và trao gửi đúng người.
+        Tình yêu vốn dĩ không cần phải phô trương. 
+        Tình yêu lớn nhất chính là sự kiên nhẫn chờ nhau trưởng thành,
+        là chấp nhận những thiếu sót của nhau, là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn vẹn. 
+        Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào cũng là những ngày đẹp trời, 
+        nhưng chỉ cần đồng lòng, chỉ cần luôn tử tế với nhau, thì dù có đi qua bao nhiêu năm tháng, 
+        ta vẫn sẽ tìm thấy nhau ở nơi bình yên nhất của cuộc đời.
         </motion.h2>
         <motion.p
           className='gallery-description'
