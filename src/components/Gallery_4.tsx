@@ -17,10 +17,10 @@ const galleryPhotos_4 = [
   '/optimized/30-w1600.webp',
 ];
 
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 export function Gallery_4() {
   return (
@@ -33,12 +33,13 @@ export function Gallery_4() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-        Tình yêu vốn dĩ không cần phải phô trương. 
-        Tình yêu lớn nhất chính là sự kiên nhẫn chờ nhau trưởng thành,
-        là chấp nhận những thiếu sót của nhau, là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn vẹn. 
-        Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào cũng là những ngày đẹp trời, 
-        nhưng chỉ cần đồng lòng, chỉ cần luôn tử tế với nhau, thì dù có đi qua bao nhiêu năm tháng, 
-        ta vẫn sẽ tìm thấy nhau ở nơi bình yên nhất của cuộc đời.
+          Tình yêu vốn dĩ không cần phải phô trương. Tình yêu lớn nhất chính là
+          sự kiên nhẫn chờ nhau trưởng thành, là chấp nhận những thiếu sót của
+          nhau, là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn
+          vẹn. Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào
+          cũng là những ngày đẹp trời, nhưng chỉ cần đồng lòng, chỉ cần luôn tử
+          tế với nhau, thì dù có đi qua bao nhiêu năm tháng, ta vẫn sẽ tìm thấy
+          nhau ở nơi bình yên nhất của cuộc đời.
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -46,8 +47,7 @@ export function Gallery_4() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
-        >
-        </motion.p>
+        ></motion.p>
 
         <motion.div
           className='h-[480px]'
@@ -69,12 +69,16 @@ export function Gallery_4() {
           >
             {galleryPhotos_4.map((image, index) => (
               <SwiperSlide key={index}>
-                <img
-                  src={image}
-                  alt={`Wedding Hero ${index + 1}`}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  className='w-full h-full object-cover object-center block'
-                />
+                <PhotoProvider>
+                  <PhotoView src={image}>
+                    <img
+                      src={image}
+                      alt={`Wedding Hero ${index + 1}`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className='w-full h-full object-cover object-center block'
+                    />
+                  </PhotoView>
+                </PhotoProvider>
               </SwiperSlide>
             ))}
           </Swiper>

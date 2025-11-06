@@ -71,13 +71,25 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
 
   return (
     <motion.div
-      className='rsvp-content'
+      className='rsvp-content relative'
       initial={{ opacity: 0, y: 60 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
       viewport={{ once: true, amount: 0.2 }}
       style={{ overflow: 'hidden' }}
     >
+      <img
+        src='/bg-form1.webp'
+        alt='absolute'
+        className='absolute left-0 top-0 bottom-0 z-100 object-cover'
+      />
+
+      <img
+        src='/bg-form2.webp'
+        alt='absolute'
+        className='absolute right-0 top-0 bottom-0 z-100 object-cover'
+      />
+
       <motion.h2
         className='rsvp-title'
         initial={{ opacity: 0, y: 30 }}

@@ -125,7 +125,7 @@ export function Preload({ onComplete }: PreloadProps) {
             <>
               <div className='progress-bar'>
                 <div
-                  className='progress-fill'
+                  className='progress-fill h-2'
                   style={{ width: `${loadingProgress}%` }}
                 ></div>
               </div>
@@ -151,10 +151,6 @@ export function Preload({ onComplete }: PreloadProps) {
               </button>
             </div>
           )}
-        </div>
-
-        <div className='preload-footer'>
-          <p>...</p>
         </div>
       </div>
     </div>

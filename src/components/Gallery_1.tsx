@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import { motion } from 'framer-motion';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const galleryPhotos_1 = [
   '/optimized/3-w1600.webp',
@@ -27,11 +28,11 @@ export function Gallery_1() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. 
-          Là cái tựa nhẹ vào vai trong những lúc yếu lòng, 
-          là ánh mắt chỉ dành cho riêng ta dù thế giới ngoài kia rộng lớn. 
-          Tình yêu không cần phải phô trương, chỉ cần chân thành và luôn hướng về nhau, 
-          vậy là đủ để trái tim bình yên.
+          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. Là
+          cái tựa nhẹ vào vai trong những lúc yếu lòng, là ánh mắt chỉ dành cho
+          riêng ta dù thế giới ngoài kia rộng lớn. Tình yêu không cần phải phô
+          trương, chỉ cần chân thành và luôn hướng về nhau, vậy là đủ để trái
+          tim bình yên.
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -39,9 +40,7 @@ export function Gallery_1() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
-        >
-          
-        </motion.p>
+        ></motion.p>
 
         <motion.div
           className='h-[480px]'
@@ -63,12 +62,16 @@ export function Gallery_1() {
           >
             {galleryPhotos_1.map((image, index) => (
               <SwiperSlide key={index}>
-                <img
-                  src={image}
-                  alt={`Wedding Hero ${index + 1}`}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                  className='w-full h-full object-cover object-center block'
-                />
+                <PhotoProvider>
+                  <PhotoView src={image}>
+                    <img
+                      src={image}
+                      alt={`Wedding Hero ${index + 1}`}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      className='w-full h-full object-cover object-center block'
+                    />
+                  </PhotoView>
+                </PhotoProvider>
               </SwiperSlide>
             ))}
           </Swiper>
