@@ -8,6 +8,20 @@ const galleryPhotos_3 = [
   '/optimized/23-w1600.webp',
   '/optimized/24-w1600.webp',
   '/optimized/25-w1600.webp',
+  '/optimized/42-w1600.webp',
+  '/optimized/41-w1600.webp',
+  '/optimized/40-w1600.webp',
+  '/optimized/38-w1600.webp',
+  '/optimized/37-w1600.webp',
+  '/optimized/36-w1600.webp',
+  '/optimized/35-w1600.webp',
+  '/optimized/34-w1600.webp',
+  '/optimized/33-w1600.webp',
+  '/optimized/32-w1600.webp',
+  '/optimized/26-w1600.webp',
+  '/optimized/27-w1600.webp',
+  '/optimized/28-w1600.webp',
+  '/optimized/30-w1600.webp',
 ];
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -29,9 +43,8 @@ export function Gallery_3() {
           Em mong rằng, tình yêu của chúng ta không chỉ là những lời hứa lãng
           mạn khi còn trẻ, mà sẽ được vun đắp bởi những ngày sau mình vẫn còn
           thương nhau. Là những cái nắm tay thật chặt giữa trời đông lạnh giá,
-          là những cái ôm từ phía sau khi em bỗng dưng thấy lòng trống trải, là
-          một tách trà nóng anh pha mỗi sáng, là những lần em cẩn thận sửa lại
-          khăn choàng cổ cho anh trước khi cả hai cùng bước ra đường.
+          là những cái ôm từ phía sau khi em bỗng dưng thấy lòng trống trải, 
+          là những lần em cẩn thận sửa lại khăn choàng cổ cho anh trước khi cả hai cùng bước ra đường.
         </motion.h2>
         <motion.p
           className='gallery-description'

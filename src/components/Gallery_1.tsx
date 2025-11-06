@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const galleryPhotos_1 = [
-  '/optimized/3-w1600.webp',
   '/optimized/4-w1600.webp',
   '/optimized/5-w1600.webp',
   '/optimized/6-w1600.webp',
@@ -30,9 +29,7 @@ export function Gallery_1() {
         >
           Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. Là
           cái tựa nhẹ vào vai trong những lúc yếu lòng, là ánh mắt chỉ dành cho
-          riêng ta dù thế giới ngoài kia rộng lớn. Tình yêu không cần phải phô
-          trương, chỉ cần chân thành và luôn hướng về nhau, vậy là đủ để trái
-          tim bình yên.
+          riêng ta dù thế giới ngoài kia rộng lớn.
         </motion.h2>
         <motion.p
           className='gallery-description'

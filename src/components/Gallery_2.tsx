@@ -30,8 +30,13 @@ export function Gallery_2() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Nhờ có em, những ngày tháng bình dị cũng trở nên thật đặc biệt. Từ
-          giờ, mọi khoảnh khắc của anh đều muốn có em chia sẻ.
+          Tình yêu lớn nhất chính là sự kiên nhẫn chờ nhau trưởng thành, 
+          là chấp nhận những thiếu sót của nhau, 
+          là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn vẹn. 
+          Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào
+          cũng là những ngày đẹp trời, nhưng chỉ cần đồng lòng, chỉ cần luôn tử
+          tế với nhau, thì dù có đi qua bao nhiêu năm tháng, ta vẫn sẽ tìm thấy
+          nhau ở nơi bình yên nhất của cuộc đời.
         </motion.h2>
         <motion.p
           className='gallery-description'
