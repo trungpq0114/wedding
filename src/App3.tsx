@@ -359,7 +359,7 @@ const App3: React.FC = () => {
             >
               tiệc nhà gái được tổ chức
               <br />
-              vào lúc 10 giờ 30 phút
+              vào lúc 10 giờ 00 phút
             </motion.p>
 
             <motion.div
