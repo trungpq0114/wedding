@@ -1,5 +1,4 @@
 const galleryPhotos_2 = [
-  '/optimized/57-w1600.webp',
   '/optimized/58-w1600.webp',
   '/optimized/59-w1600.webp',
   '/optimized/60-w1600.webp',
@@ -30,7 +29,8 @@ export function Gallery_2() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Moments in the Garden
+          Nhờ có em, những ngày tháng bình dị cũng trở nên thật đặc biệt.
+          Từ giờ, mọi khoảnh khắc của anh đều muốn có em chia sẻ.
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -39,6 +39,7 @@ export function Gallery_2() {
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
+          
         </motion.p>
 
         <motion.div

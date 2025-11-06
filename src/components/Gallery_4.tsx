@@ -2,7 +2,6 @@ const galleryPhotos_4 = [
   '/optimized/42-w1600.webp',
   '/optimized/41-w1600.webp',
   '/optimized/40-w1600.webp',
-  '/optimized/39-w1600.webp',
   '/optimized/38-w1600.webp',
   '/optimized/37-w1600.webp',
   '/optimized/36-w1600.webp',
@@ -11,6 +10,11 @@ const galleryPhotos_4 = [
   '/optimized/33-w1600.webp',
   '/optimized/32-w1600.webp',
   '/optimized/31-w1600.webp',
+  '/optimized/26-w1600.webp',
+  '/optimized/27-w1600.webp',
+  '/optimized/28-w1600.webp',
+  '/optimized/29-w1600.webp',
+  '/optimized/30-w1600.webp',
 ];
 
 
@@ -29,7 +33,12 @@ export function Gallery_4() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          The Vow Ceremony
+        Tình yêu vốn dĩ không cần phải phô trương. 
+        Tình yêu lớn nhất chính là sự kiên nhẫn chờ nhau trưởng thành,
+        là chấp nhận những thiếu sót của nhau, là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn vẹn. 
+        Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào cũng là những ngày đẹp trời, 
+        nhưng chỉ cần đồng lòng, chỉ cần luôn tử tế với nhau, thì dù có đi qua bao nhiêu năm tháng, 
+        ta vẫn sẽ tìm thấy nhau ở nơi bình yên nhất của cuộc đời.
         </motion.h2>
         <motion.p
           className='gallery-description'

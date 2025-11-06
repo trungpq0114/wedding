@@ -10,7 +10,6 @@ import { Gallery_1 } from './components/Gallery_1.tsx';
 import { Gallery_2 } from './components/Gallery_2.tsx';
 import { Gallery_3 } from './components/Gallery_3.tsx';
 import { Gallery_4 } from './components/Gallery_4.tsx';
-import { Gallery_5 } from './components/Gallery_5.tsx';
 // import { Gallery_6 } from './components/Gallery_6.tsx';
 import { Audio } from './components/Audio';
 import { Title } from './components/Title.tsx';
@@ -424,7 +423,7 @@ const App3: React.FC = () => {
 
       <section className='relative'>
         <img
-          src={'/optimized/27-w1600.webp'}
+          src={'/optimized/60-w1600.webp'}
           alt='Timeline background'
           className='timeline-bg'
         />
@@ -453,8 +452,6 @@ const App3: React.FC = () => {
       <Gallery_3 />
 
       <Gallery_4 />
-
-      <Gallery_5 />
 
       <section className='rsvp-section'>
         <RSVPForm />

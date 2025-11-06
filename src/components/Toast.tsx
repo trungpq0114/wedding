@@ -68,11 +68,12 @@ export function WeddingToast() {
 
     const timer = setInterval(() => {
       setIsVisible(false);
+
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % rsvpList.length);
         setIsVisible(true);
-      }, 300);
-    }, 5000);
+      }, 3000);
+    }, 10000);
 
     return () => clearInterval(timer);
   }, [rsvpList, currentIndex, isClosed]);
