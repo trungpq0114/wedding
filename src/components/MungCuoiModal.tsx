@@ -78,7 +78,7 @@ const MungCuoiModal: React.FC<MungCuoiModalProps> = ({ isOpen, onClose }) => {
               <div className='absolute -inset-2 bg-gradient-to-r from-[#D4AF37] to-[#FFD700] rounded-2xl opacity-20 blur-sm group-hover:opacity-30 transition-opacity'></div>
               <div className='relative rounded-xl overflow-hidden shadow-2xl border-4 border-white w-64 md:w-80'>
                 <img
-                  src='/optimized/6-w1600.webp'
+                  src='/optimized/69-w1600.webp'
                   alt='Couple photo'
                   className='w-full h-auto object-cover'
                 />
@@ -99,9 +99,6 @@ const MungCuoiModal: React.FC<MungCuoiModalProps> = ({ isOpen, onClose }) => {
               <h4 className='text-xl font-serif text-[#760507] mb-2'>
                 Gửi lời chúc mừng qua chuyển khoản
               </h4>
-              <p className='text-sm text-[#8B4513] italic'>
-                Quét mã QR để chuyển khoản
-              </p>
             </div>
 
             <div className='grid md:grid-cols-2 gap-6'>
@@ -132,9 +129,6 @@ const MungCuoiModal: React.FC<MungCuoiModalProps> = ({ isOpen, onClose }) => {
                     <div className='text-center pt-2 border-t border-[#D4AF37]/20'>
                       <p className='text-[#760507] font-serif font-medium text-lg'>
                         Chú rể
-                      </p>
-                      <p className='text-sm text-[#8B4513] mt-1'>
-                        {weddingInfo.groom}
                       </p>
                     </div>
                   </div>
@@ -168,9 +162,6 @@ const MungCuoiModal: React.FC<MungCuoiModalProps> = ({ isOpen, onClose }) => {
                     <div className='text-center pt-2 border-t border-[#D4AF37]/20'>
                       <p className='text-[#760507] font-serif font-medium text-lg'>
                         Cô dâu
-                      </p>
-                      <p className='text-sm text-[#8B4513] mt-1'>
-                        {weddingInfo.bride}
                       </p>
                     </div>
                   </div>

@@ -1,18 +1,18 @@
 const galleryPhotos_2 = [
-  '/optimized/58-w1600.webp',
-  '/optimized/59-w1600.webp',
-  '/optimized/60-w1600.webp',
-  '/optimized/61-w1600.webp',
-  '/optimized/62-w1600.webp',
-  '/optimized/63-w1600.webp',
-  '/optimized/64-w1600.webp',
   '/optimized/65-w1600.webp',
-  '/optimized/66-w1600.webp',
-  '/optimized/67-w1600.webp',
   '/optimized/68-w1600.webp',
-  '/optimized/69-w1600.webp',
+  '/optimized/59-w1600.webp',
   '/optimized/70-w1600.webp',
+  '/optimized/61-w1600.webp',
+  '/optimized/64-w1600.webp',
+  '/optimized/67-w1600.webp',
+  '/optimized/60-w1600.webp',
+  '/optimized/62-w1600.webp',
   '/optimized/71-w1600.webp',
+  '/optimized/58-w1600.webp',
+  '/optimized/63-w1600.webp',
+  '/optimized/69-w1600.webp',
+  '/optimized/66-w1600.webp',
 ];
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
@@ -30,13 +30,11 @@ export function Gallery_2() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Tình yêu lớn nhất chính là sự kiên nhẫn chờ nhau trưởng thành, 
-          là chấp nhận những thiếu sót của nhau, 
-          là nhìn thấy những điều không hoàn hảo nhưng vẫn thương trọn vẹn. 
-          Tình yêu là khi cả hai đều hiểu rằng, hôn nhân không phải lúc nào
-          cũng là những ngày đẹp trời, nhưng chỉ cần đồng lòng, chỉ cần luôn tử
-          tế với nhau, thì dù có đi qua bao nhiêu năm tháng, ta vẫn sẽ tìm thấy
-          nhau ở nơi bình yên nhất của cuộc đời.
+          Em mong rằng, tình yêu của chúng ta không chỉ là những lời hứa lãng
+          mạn khi còn trẻ, mà sẽ được vun đắp bởi những ngày sau mình vẫn còn
+          thương nhau. Là những cái nắm tay thật chặt giữa trời đông lạnh giá,
+          là những cái ôm từ phía sau khi em bỗng dưng thấy lòng trống trải, 
+          là những lần em cẩn thận sửa lại khăn choàng cổ cho anh trước khi cả hai cùng bước ra đường.
         </motion.h2>
         <motion.p
           className='gallery-description'
