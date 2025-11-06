@@ -474,9 +474,9 @@ const App3: React.FC = () => {
         <CountdownTimer targetDate={weddingDate} />
       </section>
 
-      <section className='image-container flex flex-col items-center justify-between'>
+      <section className='relative image-container flex flex-col items-center justify-between'>
         <motion.p
-          className='loichuc !px-5 !pt-5'
+          className='loichuc !px-5 !pt-5 relative'
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
@@ -488,7 +488,7 @@ const App3: React.FC = () => {
         </motion.p>
 
         <motion.p
-          className='thank-you !mb-5'
+          className='thank-you !mb-5 relative'
           initial={{ opacity: 0, scale: 0.8 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{
