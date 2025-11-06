@@ -81,13 +81,13 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
       <img
         src='/bg-form1.webp'
         alt='absolute'
-        className='absolute left-0 top-0 bottom-0 z-100 object-cover'
+        className='absolute left-0 top-0 bottom-0 object-cover'
       />
 
       <img
         src='/bg-form2.webp'
         alt='absolute'
-        className='absolute right-0 top-0 bottom-0 z-100 object-cover'
+        className='absolute right-0 top-0 bottom-0 object-cover'
       />
 
       <motion.h2
