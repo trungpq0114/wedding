@@ -213,21 +213,25 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess, onOpenMungCuoiModa
           >
             {isSubmitting ? 'Đang gửi...' : 'GỬI LỜI NHẮN'}
           </motion.button>
+
+          {onOpenMungCuoiModal && (
+            <motion.button
+              type='button'
+              className='mungcuoi'
+              onClick={onOpenMungCuoiModal}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1.6, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              style={{ position: 'relative', zIndex: 10 }}
+            >
+              MỪNG CƯỚI
+            </motion.button>
+          )}
         </div>
       </motion.form>
-
-      {onOpenMungCuoiModal && (
-        <motion.button
-          className='mungcuoi'
-          onClick={onOpenMungCuoiModal}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 1.6, ease: 'easeOut' }}
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          MỪNG CƯỚI
-        </motion.button>
-      )}
     </motion.div>
   );
 };
