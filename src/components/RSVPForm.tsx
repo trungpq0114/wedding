@@ -2,15 +2,12 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { motion } from 'framer-motion';
-import MungCuoiModal from './components/MungCuoiModal';
 
 interface RSVPFormProps {
   onSubmitSuccess?: () => void;
 }
 
 const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
-  const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
-  const [isPreloadComplete, setIsPreloadComplete] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     attendance: '',
@@ -216,9 +213,6 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
             {isSubmitting ? 'Đang gửi...' : 'GỬI LỜI NHẮN'}
           </motion.button>
         </div>
-        <button className='mungcuoi' onClick={() => setShowMungCuoiModal(true)}>
-          MỪNG CƯỚI
-        </button>
       </motion.form>
     </motion.div>
   );
