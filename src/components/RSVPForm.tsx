@@ -5,9 +5,10 @@ import { motion } from 'framer-motion';
 
 interface RSVPFormProps {
   onSubmitSuccess?: () => void;
+  onOpenMungCuoiModal?: () => void;
 }
 
-const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
+const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess, onOpenMungCuoiModal }) => {
   const [formData, setFormData] = useState({
     name: '',
     attendance: '',
@@ -214,6 +215,19 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
           </motion.button>
         </div>
       </motion.form>
+
+      {onOpenMungCuoiModal && (
+        <motion.button
+          className='mungcuoi'
+          onClick={onOpenMungCuoiModal}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1.6, ease: 'easeOut' }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          MỪNG CƯỚI
+        </motion.button>
+      )}
     </motion.div>
   );
 };
