@@ -214,6 +214,9 @@ const RSVPForm: React.FC<RSVPFormProps> = ({ onSubmitSuccess }) => {
           </motion.button>
         </div>
       </motion.form>
+      <button className='mungcuoi' onClick={() => setShowMungCuoiModal(true)}>
+          MỪNG CƯỚI
+      </button>
     </motion.div>
   );
 };

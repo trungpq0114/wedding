@@ -454,9 +454,7 @@ const App3: React.FC = () => {
       <section className='rsvp-section'>
         <RSVPForm />
 
-        <button className='mungcuoi' onClick={() => setShowMungCuoiModal(true)}>
-          MỪNG CƯỚI
-        </button>
+
       </section>
 
       <section>
