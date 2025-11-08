@@ -27,9 +27,7 @@ export function Gallery_1() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. Là
-          cái tựa nhẹ vào vai trong những lúc yếu lòng, là ánh mắt chỉ dành cho
-          riêng ta dù thế giới ngoài kia rộng lớn.
+         Our memories
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -37,7 +35,11 @@ export function Gallery_1() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
-        ></motion.p>
+        >
+          Hạnh phúc là khi có một người luôn chọn ta giữa muôn vàn lựa chọn. Là
+          cái tựa nhẹ vào vai trong những lúc yếu lòng, là ánh mắt chỉ dành cho
+          riêng ta dù thế giới ngoài kia rộng lớn.
+        </motion.p>
 
         <motion.div
           className='h-[480px]'

@@ -30,11 +30,7 @@ export function Gallery_2() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          Em mong rằng, tình yêu của chúng ta không chỉ là những lời hứa lãng
-          mạn khi còn trẻ, mà sẽ được vun đắp bởi những ngày sau mình vẫn còn
-          thương nhau. Là những cái nắm tay thật chặt giữa trời đông lạnh giá,
-          là những cái ôm từ phía sau khi em bỗng dưng thấy lòng trống trải, 
-          là những lần em cẩn thận sửa lại khăn choàng cổ cho anh trước khi cả hai cùng bước ra đường.
+          
         </motion.h2>
         <motion.p
           className='gallery-description'
@@ -42,7 +38,12 @@ export function Gallery_2() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.3 }}
-        ></motion.p>
+        >
+          Em mong rằng, tình yêu của chúng ta không chỉ là những lời hứa lãng
+          mạn khi còn trẻ, mà sẽ được vun đắp bởi những ngày sau mình vẫn còn
+          thương nhau. Là những cái nắm tay thật chặt giữa trời đông lạnh giá,
+          là những cái ôm từ phía sau khi em bỗng dưng thấy lòng trống trải.
+        </motion.p>
 
         <motion.div
           className='h-[480px]'
