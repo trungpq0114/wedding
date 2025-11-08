@@ -2,7 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './App3.css';
 import './styles/carousel.css';
 
-import { weddingDate, weddingInfo, familyInfo, imageUrls } from './constants';
+import {
+  weddingDate,
+  weddingInfo,
+  familyInfo,
+  imageUrls,
+  timelineEvents,
+  timelineEventsGroom,
+  timelineEventsBride,
+  ceremonyTimeInfo,
+} from './constants';
 import RSVPForm from './components/RSVPForm';
 import MungCuoiModal from './components/MungCuoiModal';
 import { Hero } from './components/Hero';
@@ -157,9 +166,27 @@ const CountdownTimer: React.FC<{ targetDate: Date }> = ({ targetDate }) => {
   );
 };
 
-const App3: React.FC = () => {
+interface App3Props {
+  side?: 'groom' | 'bride' | 'default';
+}
+
+const App3: React.FC<App3Props> = ({ side = 'default' }) => {
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
   const [isPreloadComplete, setIsPreloadComplete] = useState(false);
+
+  // Get timeline events based on side
+  const getTimelineEvents = () => {
+    switch (side) {
+      case 'groom':
+        return timelineEventsGroom;
+      case 'bride':
+      default:
+        return timelineEventsBride;
+    }
+  };
+
+  // Get ceremony time info based on side (default to bride)
+  const ceremonyTime = ceremonyTimeInfo[side === 'groom' ? 'groom' : 'bride'];
 
   const handlePreloadComplete = () => {
     setIsPreloadComplete(true);
@@ -357,9 +384,9 @@ const App3: React.FC = () => {
               }}
               className='ceremony-time'
             >
-              tiệc nhà gái được tổ chức
+              {ceremonyTime.text}
               <br />
-              vào lúc 10 giờ 00 phút
+              {ceremonyTime.time}
             </motion.p>
 
             <motion.div
@@ -443,7 +470,7 @@ const App3: React.FC = () => {
       </section>
 
       {/* Section 4 - Timeline */}
-      <Timeline />
+      <Timeline events={getTimelineEvents()} />
 
       <Gallery_1 />
 

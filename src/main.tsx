@@ -9,9 +9,9 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' index element={<App3 />} />
-        <Route path='/TheGroom' element={<App3 />} />
-        <Route path='/TheBride' element={<App3 />} />
+        <Route path='/' index element={<App3 side='bride' />} />
+        <Route path='/TheGroom' element={<App3 side='groom' />} />
+        <Route path='/TheBride' element={<App3 side='bride' />} />
         <Route path='/*' element={<Navigate to='/' replace />} />
       </Routes>
     </BrowserRouter>

@@ -1,19 +1,41 @@
 // Wedding configuration constants
 export const weddingDate = new Date('2025-11-29T16:30:00');
 
-// Timeline events data
-export const timelineEvents = [
+// Timeline events for groom's side (nhà trai)
+export const timelineEventsGroom = [
   {
     icon: '/image3.png',
-    time: '10:00',
+    time: '16:00',
     title: 'ĐÓN KHÁCH',
     description: 'Check in và gửi lời chúc phúc đến CDCR',
   },
   {
     icon: '/image1.png',
+    time: '17:00',
+    title: 'LỄ THÀNH HÔN',
+    description: 'Tổ chức lễ thành hôn và nâng ly chúc mừng',
+  },
+  {
+    icon: '/image2.png',
+    time: '19:00',
+    title: 'CHỤP ẢNH LƯU NIỆM',
+    description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
+  },
+];
+
+// Timeline events for bride's side (nhà gái)
+export const timelineEventsBride = [
+  {
+    icon: '/image3.png',
+    time: '10:00',
+    title: 'ĐÓN KHÁCH',
+    description: 'Check in và gửi lời chúc phúc đến nhà gái',
+  },
+  {
+    icon: '/image1.png',
     time: '11:00',
     title: 'TIỆC MỪNG',
-    description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng CDCR',
+    description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng nhà gái',
   },
   {
     icon: '/image2.png',
@@ -37,6 +59,25 @@ export const weddingInfo = {
   month: 'tháng 11',
   year: 'năm 2025',
 };
+
+// Ceremony time information for each side
+export const ceremonyTimeInfo = {
+  groom: {
+    text: 'tiệc nhà trai được tổ chức',
+    time: 'vào lúc 17 giờ 00 phút',
+  },
+  bride: {
+    text: 'tiệc nhà gái được tổ chức',
+    time: 'vào lúc 10 giờ 00 phút',
+  },
+  default: {
+    text: 'tiệc nhà gái được tổ chức',
+    time: 'vào lúc 10 giờ 00 phút',
+  },
+};
+
+// Default timeline events (same as bride's side)
+export const timelineEvents = timelineEventsBride;
 
 // Family information
 export const familyInfo = {

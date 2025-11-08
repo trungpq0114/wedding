@@ -1,7 +1,17 @@
 import { motion } from 'framer-motion';
-import { timelineEvents } from '../constants';
 
-export function Timeline() {
+interface TimelineEvent {
+  icon: string;
+  time: string;
+  title: string;
+  description: string;
+}
+
+interface TimelineProps {
+  events: TimelineEvent[];
+}
+
+export function Timeline({ events }: TimelineProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -36,7 +46,7 @@ export function Timeline() {
         viewport={{ once: true, amount: 0.1 }}
       >
         <div className='timeline-events'>
-          {timelineEvents.map((event, index) => (
+          {events.map((event, index) => (
             <motion.div
               key={index}
               className='timeline-event'
