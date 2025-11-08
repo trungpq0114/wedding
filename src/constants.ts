@@ -4,7 +4,7 @@ export const weddingDate = new Date('2025-11-29T16:30:00');
 // Timeline events for groom's side (nhà trai)
 export const timelineEventsGroom = [
   {
-    icon: '/image3.png',
+    icon: '/image2.png',
     time: '16:00',
     title: 'ĐÓN KHÁCH',
     description: 'Check in và gửi lời chúc phúc đến CDCR',
@@ -16,7 +16,7 @@ export const timelineEventsGroom = [
     description: 'Tổ chức lễ thành hôn và nâng ly chúc mừng',
   },
   {
-    icon: '/image2.png',
+    icon: '/image3.png',
     time: '19:00',
     title: 'CHỤP ẢNH LƯU NIỆM',
     description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
@@ -26,19 +26,19 @@ export const timelineEventsGroom = [
 // Timeline events for bride's side (nhà gái)
 export const timelineEventsBride = [
   {
-    icon: '/image3.png',
+    icon: '/image1.png',
     time: '10:00',
     title: 'ĐÓN KHÁCH',
     description: 'Check in và gửi lời chúc phúc đến nhà gái',
   },
   {
-    icon: '/image1.png',
+    icon: '/image2.png',
     time: '11:00',
     title: 'TIỆC MỪNG',
     description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng nhà gái',
   },
   {
-    icon: '/image2.png',
+    icon: '/image3.png',
     time: '12:30',
     title: 'CHỤP ẢNH LƯU NIỆM',
     description: 'Cùng nhau lưu giữ những khoảnh khắc đáng nhớ',
