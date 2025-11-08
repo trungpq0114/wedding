@@ -7,7 +7,6 @@ import {
   weddingInfo,
   familyInfo,
   imageUrls,
-  timelineEvents,
   timelineEventsGroom,
   timelineEventsBride,
   ceremonyTimeInfo,
@@ -173,6 +172,7 @@ interface App3Props {
 const App3: React.FC<App3Props> = ({ side = 'default' }) => {
   const [showMungCuoiModal, setShowMungCuoiModal] = useState(false);
   const [isPreloadComplete, setIsPreloadComplete] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   // Get timeline events based on side
   const getTimelineEvents = () => {
@@ -189,15 +189,24 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
   const ceremonyTime = ceremonyTimeInfo[side === 'groom' ? 'groom' : 'bride'];
 
   const handlePreloadComplete = () => {
-    setIsPreloadComplete(true);
+    setIsTransitioning(true);
+    // Show app3 after a short delay to allow preload to start sliding
+    setTimeout(() => {
+      setIsPreloadComplete(true);
+    }, 100);
+    // Remove transition class after animation completes
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 1500);
   };
 
-  if (!isPreloadComplete) {
-    return <Preload onComplete={handlePreloadComplete} />;
-  }
-
   return (
-    <div className='app3-container'>
+    <>
+      {!isPreloadComplete && (
+        <Preload onComplete={handlePreloadComplete} />
+      )}
+      {isPreloadComplete && (
+        <div className={`app3-container ${isTransitioning ? 'app3-sliding-in' : ''}`}>
       {/* <RSVPList /> */}
       <WeddingToast />
 
@@ -320,7 +329,24 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
           <GsapImage />
 
           {/* Wedding location and info */}
-          <div className='wedding-info'>
+          <div className='wedding-info relative' style={{ overflow: 'hidden' }}>
+            <img
+              src='/bg-form1.webp'
+              alt='Background left'
+              className='absolute left-0 top-0 bottom-0 object-cover'
+            />
+            <img
+              src='/bg-form2.webp'
+              alt='Background right'
+              className='absolute right-0 top-0 bottom-0 object-cover'
+            />
+            <div className='wedding-info-background'>
+              <img
+                src={imageUrls.backgroundTexture}
+                alt='Background texture'
+                className='bg-texture'
+              />
+            </div>
             {/* Family info */}
             <div className='family-info'>
               <motion.div
@@ -467,10 +493,31 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
         >
           Timeline
         </motion.h2>
+        
       </section>
 
       {/* Section 4 - Timeline */}
       <Timeline events={getTimelineEvents()} />
+
+      {/* Dress Code Section */}
+      <section className='dress-code-section'>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          transition={{ duration: 1, ease: [0.43, 0.13, 0.23, 0.96] }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{
+            once: true,
+            amount: 0.5,
+          }}
+        >
+          <h2 className='dress-code-title'>Dress Code</h2>
+          <div className='color-palette'>
+            <div className='color' style={{ backgroundColor: '#f9f9f7' }}></div>
+            <div className='color' style={{ backgroundColor: '#d4a574' }}></div>
+            <div className='color' style={{ backgroundColor: '#544737' }}></div>
+          </div>
+        </motion.div>
+      </section>
 
       <Gallery_1 />
 
@@ -528,7 +575,9 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
         isOpen={showMungCuoiModal}
         onClose={() => setShowMungCuoiModal(false)}
       />
-    </div>
+        </div>
+      )}
+    </>
   );
 };
 

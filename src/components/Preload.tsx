@@ -67,6 +67,7 @@ export function Preload({ onComplete }: PreloadProps) {
   const [isComplete, setIsComplete] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     const preloadImages = async () => {
@@ -104,7 +105,11 @@ export function Preload({ onComplete }: PreloadProps) {
 
   const handleEnter = () => {
     if (isComplete && !hasError) {
-      onComplete();
+      setIsTransitioning(true);
+      // Delay the onComplete call to allow animation to play
+      setTimeout(() => {
+        onComplete();
+      }, 1500); // Match the animation duration
     }
   };
 
@@ -113,7 +118,7 @@ export function Preload({ onComplete }: PreloadProps) {
   };
 
   return (
-    <div className='preload-container'>
+    <div className={`preload-container ${isTransitioning ? 'preload-sliding-out' : ''}`}>
       <div className='preload-content'>
         <div className='preload-logo'>
           <h1 className='preload-title'>Quang Trung & Phương Thảo</h1>
@@ -137,7 +142,7 @@ export function Preload({ onComplete }: PreloadProps) {
 
               {isComplete && (
                 <button className='enter-btn' onClick={handleEnter}>
-                  Xem thiệp mừng
+                  Mở thiệp mừng
                 </button>
               )}
             </>

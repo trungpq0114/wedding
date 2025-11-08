@@ -1,6 +1,5 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap');
-
 /* Reset */
 * {
   margin: 0;
@@ -34,6 +33,33 @@ body {
   margin: 0 auto;
   position: relative;
   background-color: #fff;
+  overflow-x: hidden;
+}
+
+.app3-container.app3-sliding-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 9998;
+  animation: slideInFromRight 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  overflow-y: auto;
+}
+
+.app3-container:not(.app3-sliding-in) {
+  position: relative;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 /* Responsive Container */
@@ -376,10 +402,22 @@ body {
 }
 
 /* Wedding Info */
+.wedding-info-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  z-index: 0;
+}
+
 .wedding-info {
   text-align: center;
   margin: 60px 0;
   color: #760507;
+  position: relative;
+  z-index: 1;
 }
 
 .location-title {
@@ -1773,6 +1811,34 @@ html {
   justify-content: center;
   z-index: 9999;
   font-family: 'Montserrat', sans-serif;
+  transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: right center;
+  border-right: 20px solid #ffffff;
+  box-shadow: 
+    -8px 0 25px rgba(139, 120, 120, 0.4),
+    inset -2px 0 10px rgba(219, 132, 132, 0.2);
+}
+
+.preload-container::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  z-index: 1;
+}
+
+.preload-sliding-out {
+  transform: translateX(-100%) rotateY(-15deg);
+  opacity: 0.8;
+  pointer-events: none;
 }
 
 .preload-content {
@@ -2008,4 +2074,32 @@ html {
 .swiper-pagination-bullet-active {
   opacity: 1;
   background: #fff;
+}
+
+/* Dress Code Section */
+.dress-code-section {
+  text-align: center;
+  padding: 10px 10px;
+  color: #2f4f3e;
+}
+
+.dress-code-title {
+  font-family: MUZUViWSVAtSEFTVEVHSSPVEY;
+  font-size: 35px;
+  font-weight: 500;
+  color:  #760507;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 0px;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
