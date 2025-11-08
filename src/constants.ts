@@ -26,13 +26,13 @@ export const timelineEventsGroom = [
 // Timeline events for bride's side (nhà gái)
 export const timelineEventsBride = [
   {
-    icon: '/image1.png',
+    icon: '/image2.png',
     time: '10:00',
     title: 'ĐÓN KHÁCH',
     description: 'Check in và gửi lời chúc phúc đến nhà gái',
   },
   {
-    icon: '/image2.png',
+    icon: '/image1.png',
     time: '11:00',
     title: 'TIỆC MỪNG',
     description: 'Cùng nhau ăn tiệc và nâng ly chúc mừng nhà gái',

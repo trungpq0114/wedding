@@ -414,7 +414,7 @@ body {
 
 .wedding-info {
   text-align: center;
-  margin: 60px 0;
+  margin: 30px 0;
   color: #760507;
   position: relative;
   z-index: 1;
@@ -519,7 +519,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1px 1fr;
   gap: 0px;
-  margin: 40px 0;
+  margin: 10px 0;
   text-align: center;
 }
 
@@ -540,7 +540,7 @@ body {
 }
 
 .family-side h4 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
   font-weight: 600;
@@ -550,7 +550,7 @@ body {
 }
 
 .family-side p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 15px;
   line-height: 1.6;
   font-weight: 400;
@@ -737,7 +737,7 @@ body {
 }
 
 .event-description {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
   color: #760507;
@@ -760,7 +760,7 @@ body {
   position: relative;
   width: 100%;
   background-color: #760507;
-  padding: 32px 20px;
+  padding: 15px 20px;
 }
 
 .gallery-background {
@@ -796,7 +796,7 @@ body {
 
 .gallery-description {
   font-family: 'Great Vibes', cursive;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.6;
   color: rgb(255, 255, 255);
   text-align: justify;
@@ -930,7 +930,7 @@ body {
 }
 
 .rsvp-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
   color: #760507;
@@ -1002,7 +1002,7 @@ body {
 .form-input,
 .form-select,
 .form-textarea {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 17px;
   line-height: 1.6;
   color: #760507;
@@ -1753,7 +1753,7 @@ html {
 }
 
 .loichuc {
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   font-size: 15px;
   line-height: 1.7;
   color: white;
@@ -1810,7 +1810,7 @@ html {
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  font-family: 'Montserrat', sans-serif;
+  font-family: RUJHYXJhbWuZCNZWRpdWudHRm;
   transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: right center;
   border-right: 20px solid #ffffff;
@@ -2084,8 +2084,8 @@ html {
 }
 
 .dress-code-title {
-  font-family: MUZUViWSVAtSEFTVEVHSSPVEY;
-  font-size: 35px;
+  font-family: MUZUViWSVAtTWuclldXItTGEtRGbGFpcUtUmVndWxhcivdGY;
+  font-size: 45px;
   font-weight: 500;
   color:  #760507;
 }

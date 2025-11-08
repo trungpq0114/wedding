@@ -333,12 +333,12 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
             <img
               src='/bg-form1.webp'
               alt='Background left'
-              className='absolute left-0 top-0 bottom-0 object-cover'
+              className='absolute left-0 top-30 bottom-0 object-cover'
             />
             <img
               src='/bg-form2.webp'
               alt='Background right'
-              className='absolute right-0 top-0 bottom-0 object-cover'
+              className='absolute right-0 top-30 bottom-0 object-cover'
             />
             <div className='wedding-info-background'>
               <img
@@ -512,9 +512,9 @@ const App3: React.FC<App3Props> = ({ side = 'default' }) => {
         >
           <h2 className='dress-code-title'>Dress Code</h2>
           <div className='color-palette'>
-            <div className='color' style={{ backgroundColor: '#f9f9f7' }}></div>
-            <div className='color' style={{ backgroundColor: '#d4a574' }}></div>
-            <div className='color' style={{ backgroundColor: '#544737' }}></div>
+            <div className='color' style={{ backgroundColor: '#fff9eb' }}></div>
+            <div className='color' style={{ backgroundColor: '#ffecc1' }}></div>
+            <div className='color' style={{ backgroundColor: '#684f14' }}></div>
           </div>
         </motion.div>
       </section>
